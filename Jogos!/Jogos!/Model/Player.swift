@@ -24,7 +24,6 @@ class Player {
 	init (name: String, alignment : alignments) {
 		self.name = name
 		self.alignment = alignment
-		
 	}
 	
 }

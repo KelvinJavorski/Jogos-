@@ -9,9 +9,9 @@
 import Foundation
 
 class Map {
-	var map : [[Place]] = [[]]
 	
-	var playersPosition : [Int] = [3, 3]
+	var map 			: [[Place]] = [[]]
+	var playersPosition : [Int] 	= [3, 3]
 	
 	
 	func generateMap (size: Int) {
@@ -32,6 +32,8 @@ class Map {
             }
         }
     }
+	
+	
 	
 	
 }

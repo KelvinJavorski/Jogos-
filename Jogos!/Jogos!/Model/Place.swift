@@ -10,9 +10,9 @@ import Foundation
 
 class Place {
 	
-	var name : String = ""
-
-	var imageName : String = ""
+	var name 		: String = ""
+	var description : String = ""
+	var imageName 	: String = ""
 	
 	enum types {
 		case trap
