@@ -23,7 +23,15 @@ class Map {
 		
 	}
 	
-	
+    func criaTabuleiro(){
+        let lin = 5
+        let col = 5
+        for linha in 0...lin{
+            for coluna in 0...col{
+                //Map[lin][col] = Place(name: "", imageName: "", type: .empty)
+            }
+        }
+    }
 	
 	
 }
