@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F893035238EEBF500BBCE75 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F893034238EEBF500BBCE75 /* Player.swift */; };
+		6F893037238EEC5800BBCE75 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F893036238EEC5800BBCE75 /* Place.swift */; };
 		B66512B82386FB28000E20C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B72386FB28000E20C5 /* AppDelegate.swift */; };
 		B66512BA2386FB28000E20C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B92386FB28000E20C5 /* SceneDelegate.swift */; };
 		B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512BB2386FB28000E20C5 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F893034238EEBF500BBCE75 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6F893036238EEC5800BBCE75 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		B66512B42386FB28000E20C5 /* Jogos!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogos!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66512B72386FB28000E20C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B66512B92386FB28000E20C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F893033238EE96800BBCE75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F893034238EEBF500BBCE75 /* Player.swift */,
+				6F893036238EEC5800BBCE75 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B66512AB2386FB28000E20C5 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 		B66512B62386FB28000E20C5 /* Jogos! */ = {
 			isa = PBXGroup;
 			children = (
+				6F893033238EE96800BBCE75 /* Model */,
 				B66512B72386FB28000E20C5 /* AppDelegate.swift */,
 				B66512B92386FB28000E20C5 /* SceneDelegate.swift */,
 				B66512BB2386FB28000E20C5 /* ViewController.swift */,
@@ -144,6 +158,8 @@
 				B66512C22386FB28000E20C5 /* Jogos_.xcdatamodeld in Sources */,
 				B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */,
 				B66512B82386FB28000E20C5 /* AppDelegate.swift in Sources */,
+				6F893037238EEC5800BBCE75 /* Place.swift in Sources */,
+				6F893035238EEBF500BBCE75 /* Player.swift in Sources */,
 				B66512BA2386FB28000E20C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
