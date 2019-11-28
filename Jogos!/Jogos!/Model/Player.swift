@@ -21,9 +21,9 @@ class Player {
 	
 	var place : Place!
 	
-	init (name: String, alignment : alignments) {
+	init (name: String) {
 		self.name = name
-		self.alignment = alignment
+//		self.alignment = alignment
 		
 	}
 	
