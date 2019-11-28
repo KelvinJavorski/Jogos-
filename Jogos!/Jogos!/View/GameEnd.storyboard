@@ -10,7 +10,7 @@
         <!--Game End View Controller-->
         <scene sceneID="X9b-AG-Rt5">
             <objects>
-                <viewController id="unq-H5-Hww" customClass="GameEndViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game End" useStoryboardIdentifierAsRestorationIdentifier="YES" id="unq-H5-Hww" customClass="GameEndViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HPa-qC-v4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHH-y1-E0o">
+                                <rect key="frame" x="159" y="783" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <action selector="mainMenu:" destination="unq-H5-Hww" eventType="touchUpInside" id="pJu-UV-rnk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -34,6 +44,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bee-EK-9Jx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="95"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="hvP-4I-Amz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainMenu" referencedIdentifier="Main Menu" id="PtX-01-PlT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbs-vk-8j5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="433"/>
         </scene>
     </scenes>
 </document>
