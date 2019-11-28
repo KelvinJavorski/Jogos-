@@ -7,20 +7,81 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pass Device View Controller-->
         <scene sceneID="ZME-nu-9oJ">
             <objects>
-                <viewController id="mTP-1K-mNP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Pass Device" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mTP-1K-mNP" customClass="PassDeviceViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AO2-T1-JM8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass the Device" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1q-Q9-0ut">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPR-Ho-Jl6">
+                                <rect key="frame" x="128" y="697" width="159" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Input Player Name"/>
+                                <connections>
+                                    <action selector="inputPlayerName:" destination="mTP-1K-mNP" eventType="touchUpInside" id="fP4-V2-oXk"/>
+                                    <action selector="inputPlayerName:" destination="heG-z0-Gm5" eventType="touchUpInside" id="nXH-Aq-Kbw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTv-ct-jPi">
+                                <rect key="frame" x="149" y="741" width="118" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Current Place"/>
+                                <connections>
+                                    <action selector="currentPlace:" destination="mTP-1K-mNP" eventType="touchUpInside" id="dEg-QL-gRA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBX-Iv-Wrq">
+                                <rect key="frame" x="162" y="785" width="91" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Game End"/>
+                                <connections>
+                                    <action selector="gameEnd:" destination="mTP-1K-mNP" eventType="touchUpInside" id="bzo-vD-iv7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g1q-Q9-0ut" firstAttribute="leading" secondItem="6ag-xe-fgB" secondAttribute="leading" constant="20" id="VJG-cs-afI"/>
+                            <constraint firstItem="6ag-xe-fgB" firstAttribute="trailing" secondItem="g1q-Q9-0ut" secondAttribute="trailing" constant="20" id="VLP-Nr-ebg"/>
+                            <constraint firstItem="g1q-Q9-0ut" firstAttribute="top" secondItem="6ag-xe-fgB" secondAttribute="top" constant="100" id="glO-hi-yZi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6ag-xe-fgB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0W9-Gh-YT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="heG-z0-Gm5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="114" y="138"/>
+        </scene>
+        <!--Input Player Name-->
+        <scene sceneID="a1v-sS-owl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InputPlayersNames" referencedIdentifier="Input Player Name" id="1MS-IB-mZ6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQI-nD-1u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="478"/>
+        </scene>
+        <!--Current Place-->
+        <scene sceneID="h1z-38-dXV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrentPlace" referencedIdentifier="Current Place" id="W7Z-VR-v5v" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiW-KI-Oqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="514"/>
         </scene>
     </scenes>
 </document>
