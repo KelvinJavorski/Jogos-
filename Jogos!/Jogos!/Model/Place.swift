@@ -10,9 +10,13 @@ import Foundation
 
 class Place {
 	
-	var name 		: String = ""
-	var description : String = ""
-	var imageName 	: String = ""
+	var name : String = ""
+	var imageName : String = ""
+    struct coordenate {
+        var x : Int!
+        var y : Int!
+    }
+    var coordenate : coordenate!
 	
 	enum types {
 		case trap
@@ -20,7 +24,7 @@ class Place {
 		case misc
 		case safehouse
 	}
-	
+    
 	var type : types = .empty
 	
 	init(name : String, imageName : String, type : types) {
