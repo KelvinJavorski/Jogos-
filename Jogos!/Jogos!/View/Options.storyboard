@@ -7,20 +7,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Options View Controller-->
         <scene sceneID="waV-rC-vIl">
             <objects>
-                <viewController id="Hv1-4u-SJe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Options" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hv1-4u-SJe" customClass="OptionsViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o09-UZ-4XZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58d-DK-asI">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iQ-de-AOf">
+                                <rect key="frame" x="159" y="386" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <action selector="mainMenu:" destination="Hv1-4u-SJe" eventType="touchUpInside" id="Nxy-Oz-mcK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-tU-9Yz">
+                                <rect key="frame" x="176" y="430" width="63" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Credits"/>
+                                <connections>
+                                    <action selector="credits:" destination="Hv1-4u-SJe" eventType="touchUpInside" id="HF3-hh-77S"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="58d-DK-asI" firstAttribute="leading" secondItem="8JW-aI-6jc" secondAttribute="leading" constant="20" id="4Ds-jQ-Wk2"/>
+                            <constraint firstItem="58d-DK-asI" firstAttribute="top" secondItem="8JW-aI-6jc" secondAttribute="top" constant="100" id="U8c-69-NsO"/>
+                            <constraint firstItem="8JW-aI-6jc" firstAttribute="trailing" secondItem="58d-DK-asI" secondAttribute="trailing" constant="20" id="kEX-KG-VNK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8JW-aI-6jc"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSj-bP-RIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="151" y="110"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="eBx-hl-Zci">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainMenu" referencedIdentifier="Main Menu" id="WfO-7L-qkx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XqF-ca-M2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781" y="86"/>
+        </scene>
+        <!--Credits-->
+        <scene sceneID="iPr-gM-p3G">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Credits" referencedIdentifier="Credits" id="MJo-bS-fAt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjp-Mx-bmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="120"/>
         </scene>
     </scenes>
 </document>

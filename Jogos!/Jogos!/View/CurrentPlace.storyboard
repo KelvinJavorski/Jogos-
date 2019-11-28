@@ -7,20 +7,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Current Place View Controller-->
         <scene sceneID="e3C-eW-3ki">
             <objects>
-                <viewController id="t04-j3-ClG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Current Place" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t04-j3-ClG" customClass="CurrentPlaceViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T7z-kT-shC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Place Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sg-cR-tuv">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8N-LE-hwj">
+                                <rect key="frame" x="155" y="776" width="106" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.74612247239999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Pass Device"/>
+                                <connections>
+                                    <action selector="passDevice:" destination="t04-j3-ClG" eventType="touchUpInside" id="5OP-OU-vIb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3sg-cR-tuv" firstAttribute="leading" secondItem="4hy-An-B2M" secondAttribute="leading" constant="20" id="0tu-lS-7cO"/>
+                            <constraint firstItem="4hy-An-B2M" firstAttribute="trailing" secondItem="3sg-cR-tuv" secondAttribute="trailing" constant="20" id="e1s-uJ-V10"/>
+                            <constraint firstItem="3sg-cR-tuv" firstAttribute="top" secondItem="4hy-An-B2M" secondAttribute="top" constant="100" id="tKW-iO-xjt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4hy-An-B2M"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQQ-Fn-Rgj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-17" y="89"/>
+        </scene>
+        <!--Pass Device-->
+        <scene sceneID="Oej-vb-XN9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PassDevice" referencedIdentifier="Pass Device" id="hMt-xH-pVk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7C-MK-Qy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="429"/>
         </scene>
     </scenes>
 </document>
