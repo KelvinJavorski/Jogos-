@@ -27,7 +27,6 @@
 		6FAD07872390427E005C990B /* PassDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD07862390427E005C990B /* PassDeviceViewController.swift */; };
 		6FAD078923904291005C990B /* CurrentPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078823904291005C990B /* CurrentPlaceViewController.swift */; };
 		6FAD078B2390429D005C990B /* GameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078A2390429D005C990B /* GameEndViewController.swift */; };
-		B62BD60F239041C900B97DED /* InputPlayersNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62BD60E239041C900B97DED /* InputPlayersNameViewController.swift */; };
 		B66512B82386FB28000E20C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B72386FB28000E20C5 /* AppDelegate.swift */; };
 		B66512BA2386FB28000E20C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B92386FB28000E20C5 /* SceneDelegate.swift */; };
 		B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512BB2386FB28000E20C5 /* ViewController.swift */; };
@@ -60,7 +59,6 @@
 		6FAD07862390427E005C990B /* PassDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceViewController.swift; sourceTree = "<group>"; };
 		6FAD078823904291005C990B /* CurrentPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlaceViewController.swift; sourceTree = "<group>"; };
 		6FAD078A2390429D005C990B /* GameEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewController.swift; sourceTree = "<group>"; };
-		B62BD60E239041C900B97DED /* InputPlayersNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPlayersNameViewController.swift; sourceTree = "<group>"; };
 		B66512B42386FB28000E20C5 /* Jogos!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogos!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66512B72386FB28000E20C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B66512B92386FB28000E20C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				6FAD078423904272005C990B /* InputPlayersNameViewController.swift */,
 				6FAD078823904291005C990B /* CurrentPlaceViewController.swift */,
 				6FAD078A2390429D005C990B /* GameEndViewController.swift */,
-				B62BD60E239041C900B97DED /* InputPlayersNameViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,7 +241,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66512C22386FB28000E20C5 /* Jogos_.xcdatamodeld in Sources */,
-				B62BD60F239041C900B97DED /* InputPlayersNameViewController.swift in Sources */,
 				6F89303D238EF3DB00BBCE75 /* GameManager.swift in Sources */,
 				6FAD077F23904253005C990B /* MainMenuViewController.swift in Sources */,
 				B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */,
