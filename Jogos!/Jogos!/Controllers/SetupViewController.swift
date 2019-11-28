@@ -11,7 +11,6 @@ import UIKit
 class SetupViewController: UIViewController {
     
     
-    @IBOutlet weak var nameText : UITextField!
     @IBOutlet weak var confirmButton: UIButton!
     
     var numberOfPlayers = 0
@@ -21,45 +20,32 @@ class SetupViewController: UIViewController {
     
     
     let availablePlayersOption = [3,4,5]
-    var players = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createNumberOfPlayersPicker()
         picker.delegate = self
         picker.dataSource = self
+        createNumberOfPlayersPicker()
         print(numberOfPlayers)
         
         // Do any additional setup after loading the view.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
+
     
     @IBAction func setNumberOfPlayers(_ sender: Any){
         print(numberOfPlayers)
+//        performSegue(withIdentifier: "InputPlayersName", sender: nil)
     }
     
-    @IBAction func createNewPlayerName(_ sender: Any){
-        if(nameText.text != ""){
-            players.append(Player(name: nameText.text!))
-            nameText.text = ""
-        }
-        
-        if (verifyMaxNumberWasReached()){
-            print("Players names have been filled")
-            //            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "InputPlayersName"{
+            let vc = segue.destination as! InputPlayersNameViewController
+            vc.numberOfPlayers = numberOfPlayers
         }
     }
     
-    func verifyMaxNumberWasReached() -> Bool{
-        if (players.count < numberOfPlayers){
-            return false
-        }
-        return true
-    }
+    
     
 }
 
