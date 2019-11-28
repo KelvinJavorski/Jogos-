@@ -10,11 +10,22 @@ import UIKit
 
 class InputPlayersNameViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	func refreshInterface () {
+		// RELOAD INFO THAT SHOWS ONSCREEN
 		
-        
-    }
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		refreshInterface()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		refreshInterface()
+	}
     
 
 	@IBAction func passDevice(_ sender: UIButton) {

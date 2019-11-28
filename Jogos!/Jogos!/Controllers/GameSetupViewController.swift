@@ -10,11 +10,23 @@ import UIKit
 
 class GameSetupViewController: UIViewController {
 
+	
+	func refreshInterface () {
+		// RELOAD INFO THAT SHOWS ONSCREEN
+		
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+       refreshInterface()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		refreshInterface()
+	}
     
 
 	@IBAction func mainMenu(_ sender: UIButton) {
