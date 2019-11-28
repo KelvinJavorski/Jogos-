@@ -7,14 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Setup View Controller-->
         <scene sceneID="1TA-id-rc8">
             <objects>
-                <viewController id="TsC-iS-CMv" sceneMemberID="viewController">
+                <viewController id="TsC-iS-CMv" customClass="GameSetupViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybp-Do-Q6G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Setup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-p8-ugy">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xG4-p8-ugy" firstAttribute="leading" secondItem="7hL-MA-u9H" secondAttribute="leading" constant="20" id="FcS-3X-CBf"/>
+                            <constraint firstItem="7hL-MA-u9H" firstAttribute="trailing" secondItem="xG4-p8-ugy" secondAttribute="trailing" constant="20" id="Q6o-XZ-qaT"/>
+                            <constraint firstItem="xG4-p8-ugy" firstAttribute="top" secondItem="7hL-MA-u9H" secondAttribute="top" constant="100" id="i5I-Q9-p2j"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7hL-MA-u9H"/>
                     </view>
                 </viewController>

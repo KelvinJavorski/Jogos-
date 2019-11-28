@@ -19,6 +19,14 @@
 		6F89304B238F07DE00BBCE75 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F89304A238F07DE00BBCE75 /* MainMenu.storyboard */; };
 		6F89304D238F07F600BBCE75 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F89304C238F07F600BBCE75 /* Options.storyboard */; };
 		6F89304F238F080A00BBCE75 /* Credits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F89304E238F080A00BBCE75 /* Credits.storyboard */; };
+		6FAD077D23904248005C990B /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD077C23904248005C990B /* OptionsViewController.swift */; };
+		6FAD077F23904253005C990B /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD077E23904253005C990B /* MainMenuViewController.swift */; };
+		6FAD07812390425B005C990B /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD07802390425B005C990B /* CreditsViewController.swift */; };
+		6FAD078323904265005C990B /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078223904265005C990B /* GameSetupViewController.swift */; };
+		6FAD078523904272005C990B /* InputPlayersNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078423904272005C990B /* InputPlayersNameViewController.swift */; };
+		6FAD07872390427E005C990B /* PassDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD07862390427E005C990B /* PassDeviceViewController.swift */; };
+		6FAD078923904291005C990B /* CurrentPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078823904291005C990B /* CurrentPlaceViewController.swift */; };
+		6FAD078B2390429D005C990B /* GameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAD078A2390429D005C990B /* GameEndViewController.swift */; };
 		B66512B82386FB28000E20C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B72386FB28000E20C5 /* AppDelegate.swift */; };
 		B66512BA2386FB28000E20C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512B92386FB28000E20C5 /* SceneDelegate.swift */; };
 		B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66512BB2386FB28000E20C5 /* ViewController.swift */; };
@@ -43,6 +51,14 @@
 		6F89304A238F07DE00BBCE75 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
 		6F89304C238F07F600BBCE75 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
 		6F89304E238F080A00BBCE75 /* Credits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Credits.storyboard; sourceTree = "<group>"; };
+		6FAD077C23904248005C990B /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		6FAD077E23904253005C990B /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		6FAD07802390425B005C990B /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		6FAD078223904265005C990B /* GameSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
+		6FAD078423904272005C990B /* InputPlayersNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPlayersNameViewController.swift; sourceTree = "<group>"; };
+		6FAD07862390427E005C990B /* PassDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceViewController.swift; sourceTree = "<group>"; };
+		6FAD078823904291005C990B /* CurrentPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlaceViewController.swift; sourceTree = "<group>"; };
+		6FAD078A2390429D005C990B /* GameEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewController.swift; sourceTree = "<group>"; };
 		B66512B42386FB28000E20C5 /* Jogos!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jogos!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66512B72386FB28000E20C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B66512B92386FB28000E20C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +118,14 @@
 			children = (
 				B66512BB2386FB28000E20C5 /* ViewController.swift */,
 				B66512D0238EFA7F000E20C5 /* SetupViewController.swift */,
+				6FAD077E23904253005C990B /* MainMenuViewController.swift */,
+				6FAD077C23904248005C990B /* OptionsViewController.swift */,
+				6FAD07802390425B005C990B /* CreditsViewController.swift */,
+				6FAD078223904265005C990B /* GameSetupViewController.swift */,
+				6FAD078423904272005C990B /* InputPlayersNameViewController.swift */,
+				6FAD07862390427E005C990B /* PassDeviceViewController.swift */,
+				6FAD078823904291005C990B /* CurrentPlaceViewController.swift */,
+				6FAD078A2390429D005C990B /* GameEndViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,13 +242,21 @@
 			files = (
 				B66512C22386FB28000E20C5 /* Jogos_.xcdatamodeld in Sources */,
 				6F89303D238EF3DB00BBCE75 /* GameManager.swift in Sources */,
+				6FAD077F23904253005C990B /* MainMenuViewController.swift in Sources */,
 				B66512BC2386FB28000E20C5 /* ViewController.swift in Sources */,
+				6FAD078923904291005C990B /* CurrentPlaceViewController.swift in Sources */,
 				B66512B82386FB28000E20C5 /* AppDelegate.swift in Sources */,
 				6F89303B238EF27E00BBCE75 /* Map.swift in Sources */,
 				B66512D1238EFA7F000E20C5 /* SetupViewController.swift in Sources */,
+				6FAD07812390425B005C990B /* CreditsViewController.swift in Sources */,
 				6F893037238EEC5800BBCE75 /* Place.swift in Sources */,
+				6FAD078523904272005C990B /* InputPlayersNameViewController.swift in Sources */,
+				6FAD07872390427E005C990B /* PassDeviceViewController.swift in Sources */,
 				6F893035238EEBF500BBCE75 /* Player.swift in Sources */,
+				6FAD078323904265005C990B /* GameSetupViewController.swift in Sources */,
 				B66512BA2386FB28000E20C5 /* SceneDelegate.swift in Sources */,
+				6FAD078B2390429D005C990B /* GameEndViewController.swift in Sources */,
+				6FAD077D23904248005C990B /* OptionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,14 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Input Players Name View Controller-->
         <scene sceneID="qMh-6Q-6ut">
             <objects>
-                <viewController id="EIY-x6-uu1" sceneMemberID="viewController">
+                <viewController id="EIY-x6-uu1" customClass="InputPlayersNameViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="meh-hk-bsI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Player Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp4-Ie-hLZ">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dej-Ta-Z3Q" firstAttribute="trailing" secondItem="Tp4-Ie-hLZ" secondAttribute="trailing" constant="20" id="fzh-m9-Fso"/>
+                            <constraint firstItem="Tp4-Ie-hLZ" firstAttribute="leading" secondItem="dej-Ta-Z3Q" secondAttribute="leading" constant="20" id="ghi-WZ-XtB"/>
+                            <constraint firstItem="Tp4-Ie-hLZ" firstAttribute="top" secondItem="dej-Ta-Z3Q" secondAttribute="top" constant="100" id="noJ-yI-gvX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dej-Ta-Z3Q"/>
                     </view>
                 </viewController>
