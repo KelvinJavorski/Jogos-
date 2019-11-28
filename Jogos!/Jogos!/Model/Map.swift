@@ -13,7 +13,7 @@ class Map {
     
     var playersPosition : [Int] = [3, 3]
     
-    var direction : directions
+    var direction : directions!
     enum directions {
         case north
         case northeast
@@ -25,14 +25,40 @@ class Map {
         case northwest
     }
     
+	
+	// >>>---------> MAP GENERATION
+	
     func generateMap (size: Int) {
-        
+		
+		createEmptyMap(size: 5)
+		
+		populateMap()
+		
     }
     
-    func distanceBetween(pos1 : [Int], pos2 : [Int]) {
-        
-    }
-    
+	func createEmptyMap(size: Int){
+		for line in 0...size{
+			for column in 0...size{
+				map[line][column] = Place(name: "", imageName: "", type: .empty)
+			}
+		}
+	}
+	
+	func populateMap() {
+		// Put Safehouse
+		
+		// Put Misc Places
+		
+		// Put Traps
+	}
+	
+	
+	// >>>---------> DIRECTIONS
+	
+	func distanceBetween(pos1 : [Int], pos2 : [Int]) {
+		
+	}
+	
     func Directions(placePlayer : Place, placeTarget : Place){
     
         var angle = atan2f(Float(placePlayer.coordenate.y - placePlayer.coordenate.y), Float(placePlayer.coordenate.x - placePlayer.coordenate.x))
@@ -147,15 +173,7 @@ class Map {
     }
 
     
-    func criaTabuleiro(){
-        let lin = 5
-        let col = 5
-        for linha in 0...lin{
-            for coluna in 0...col{
-                //Map[lin][col] = Place(name: "", imageName: "", type: .empty)
-            }
-        }
-    }
+    
     
     
     
