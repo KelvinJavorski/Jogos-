@@ -15,12 +15,22 @@ class InputPlayersNameViewController: UIViewController {
     var numberOfPlayers = 0
     var players = [Player]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-        // Do any additional setup after loading the view.
-    }
+	func refreshInterface () {
+		// RELOAD INFO THAT SHOWS ONSCREEN
+		
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		refreshInterface()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		refreshInterface()
+	}
     
     @IBAction func createNewPlayerName(_ sender: Any){
         if(nameText.text != ""){
