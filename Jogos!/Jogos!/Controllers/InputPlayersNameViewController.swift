@@ -45,6 +45,11 @@ class InputPlayersNameViewController: UIViewController {
         }
         return true
     }
+    
+    @IBAction func passDevice(_ sender: UIButton) {
+        if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -58,8 +63,5 @@ class InputPlayersNameViewController: UIViewController {
 
 }
 
-	@IBAction func passDevice(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
-	}
+	
 		}
