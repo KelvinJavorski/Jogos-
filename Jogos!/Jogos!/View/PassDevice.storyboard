@@ -7,14 +7,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pass Device View Controller-->
         <scene sceneID="ZME-nu-9oJ">
             <objects>
-                <viewController id="mTP-1K-mNP" sceneMemberID="viewController">
+                <viewController id="mTP-1K-mNP" customClass="PassDeviceViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AO2-T1-JM8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass the Device" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1q-Q9-0ut">
+                                <rect key="frame" x="20" y="144" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g1q-Q9-0ut" firstAttribute="leading" secondItem="6ag-xe-fgB" secondAttribute="leading" constant="20" id="VJG-cs-afI"/>
+                            <constraint firstItem="6ag-xe-fgB" firstAttribute="trailing" secondItem="g1q-Q9-0ut" secondAttribute="trailing" constant="20" id="VLP-Nr-ebg"/>
+                            <constraint firstItem="g1q-Q9-0ut" firstAttribute="top" secondItem="6ag-xe-fgB" secondAttribute="top" constant="100" id="glO-hi-yZi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6ag-xe-fgB"/>
                     </view>
                 </viewController>
