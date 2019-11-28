@@ -38,7 +38,7 @@ class Map {
         
         var placeAngle = atan2f(Float(placeTarget.coordenate.y),
                            Float(placeTarget.coordenate.x))
-        var rotation -= CGFloat(playerAngle - placeAngle)
+//        var rotation -= CGFloat(playerAngle - placeAngle)
     
     }
     

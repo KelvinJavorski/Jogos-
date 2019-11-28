@@ -8,19 +8,18 @@
 
 import UIKit
 
-class SetupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
-       
+class SetupViewController: UIViewController {
+    
+    
     @IBOutlet weak var nameText : UITextField!
-    @IBOutlet weak var numberOfPlayerText : UITextField!
     @IBOutlet weak var confirmButton: UIButton!
     
     var numberOfPlayers = 0
     var currentNumber = 0
     let picker = UIPickerView()
     let toolBar = UIToolbar()
-
-
+    
+    
     let availablePlayersOption = [3,4,5]
     var players = [Player]()
     
@@ -39,8 +38,36 @@ class SetupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         super.touchesBegan(touches, with: event)
     }
     
+    @IBAction func setNumberOfPlayers(_ sender: Any){
+        print(numberOfPlayers)
+    }
+    
+    @IBAction func createNewPlayerName(_ sender: Any){
+        if(nameText.text != ""){
+            players.append(Player(name: nameText.text!))
+            nameText.text = ""
+        }
+        
+        if (verifyMaxNumberWasReached()){
+            print("Players names have been filled")
+            //            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        }
+    }
+    
+    func verifyMaxNumberWasReached() -> Bool{
+        if (players.count < numberOfPlayers){
+            return false
+        }
+        return true
+    }
+    
+}
+
+//MARK: UIPickerView
+extension SetupViewController : UIPickerViewDataSource, UIPickerViewDelegate{
+    
     func createNumberOfPlayersPicker(){
-//        picker.backgroundColor = .white
+        //        picker.backgroundColor = .white
         picker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(picker)
         picker.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -59,29 +86,6 @@ class SetupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         numberOfPlayers = availablePlayersOption[row]
         return "\(availablePlayersOption[row])"
-    }
-    
-    @IBAction func setNumberOfPlayers(_ sender: Any){
-        print(numberOfPlayers)
-    }
-    
-    @IBAction func createNewPlayerName(_ sender: Any){
-        if(nameText.text != ""){
-            players.append(Player(name: nameText.text!))
-            nameText.text = ""
-        }
         
-        if (verifyMaxNumberWasReached()){
-            print("Players names have been filled")
-//            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-        }
     }
-    
-    func verifyMaxNumberWasReached() -> Bool{
-        if (players.count < numberOfPlayers){
-            return false
-        }
-        return true
-    }
-
 }
