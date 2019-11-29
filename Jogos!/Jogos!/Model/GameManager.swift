@@ -12,12 +12,44 @@ class GameManager {
 	
 	static let shared = GameManager()
 	
-	var map 			:  Map!
 	var players         : [Player] = []
+	var map 			: Map!
 	var currentPlayer 	: Player!
     var numberOfPlayers : Int!
 	
 	var turnsLeft 	: Int!
+	
+	
+	// >>>---------> GAME START
+	
+	func setupGame () {
+		// Generate new map
+		
+		// Reset Turns Left
+	
+		
+	}
+	
+	// >>>---------> DURING THE GAME
+	
+	func nextTurn () {
+		// Check Turns left
+		
+		// Move Players (if appliable)
+		
+		// Check Player Location
+		
+		// if trap OR safehouse {
+		//    device on the table -> end game
+		// } else {
+		//    pass the device -> new place info
+		//	  reset timer
+		// }
+		
+		
+	}
+	
+	// >>>---------> GAME ENDING
 	
     private init(){
     }
@@ -31,8 +63,8 @@ class GameManager {
 		
 	}
 	
-	func nextTurn () {
-		
-	}
+	
+	
+	
 	
 }
