@@ -12,8 +12,6 @@ class InputPlayersNameViewController: UIViewController {
 
     @IBOutlet weak var nameText : UITextField!
     
-    var numberOfPlayers = 0
-    var players = [Player]()
     
 	func refreshInterface () {
 		// RELOAD INFO THAT SHOWS ONSCREEN
@@ -34,7 +32,7 @@ class InputPlayersNameViewController: UIViewController {
     
     @IBAction func createNewPlayerName(_ sender: Any){
         if(nameText.text != ""){
-            players.append(Player(name: nameText.text!))
+            GameManager.shared.players.append(Player(name: nameText.text!))
             nameText.text = ""
         }
         
@@ -50,7 +48,9 @@ class InputPlayersNameViewController: UIViewController {
     }
     
     func verifyMaxNumberWasReached() -> Bool{
-        if (players.count < numberOfPlayers){
+        let currentPlayer = GameManager.shared.players.count
+        let numberOfPlayers = GameManager.shared.numberOfPlayers
+        if (currentPlayer < numberOfPlayers!){
             return false
         }
         return true

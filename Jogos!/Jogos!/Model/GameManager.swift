@@ -15,6 +15,7 @@ class GameManager {
 	var map 			:  Map!
 	var players 		: [Player]!
 	var currentPlayer 	: Player!
+    var numberOfPlayers : Int!
 	
 	var turnsLeft 	: Int!
 	

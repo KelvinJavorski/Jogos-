@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hv1-4u-SJe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hv1-4u-SJe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,10 +50,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8JW-aI-6jc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="SUK-Xg-NNY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSj-bP-RIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="110"/>
+            <point key="canvasLocation" x="1060.8695652173915" y="109.82142857142857"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="eBx-hl-Zci">
@@ -61,15 +62,15 @@
                 <viewControllerPlaceholder storyboardName="MainMenu" referencedIdentifier="Main Menu" id="WfO-7L-qkx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqF-ca-M2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="86"/>
+            <point key="canvasLocation" x="1689.8550724637682" y="85.714285714285708"/>
         </scene>
         <!--Credits-->
         <scene sceneID="iPr-gM-p3G">
             <objects>
-                <viewControllerPlaceholder storyboardName="Credits" referencedIdentifier="Credits" id="MJo-bS-fAt" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Credits" storyboardName="Credits" referencedIdentifier="Credits" id="MJo-bS-fAt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjp-Mx-bmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="767" y="120"/>
+            <point key="canvasLocation" x="1676.0869565217392" y="119.86607142857142"/>
         </scene>
     </scenes>
 </document>
