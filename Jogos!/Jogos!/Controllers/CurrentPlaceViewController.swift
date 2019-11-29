@@ -26,6 +26,26 @@ class CurrentPlaceViewController: UIViewController {
 		
 		refreshInterface()
 	}
+	
+	@IBAction func north(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func south(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func west(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func east(_ sender: UIButton) {
+		
+		
+	}
     
 	@IBAction func passDevice(_ sender: UIButton) {
 		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {

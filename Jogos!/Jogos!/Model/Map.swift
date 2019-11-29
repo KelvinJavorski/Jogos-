@@ -14,6 +14,7 @@ class Map {
     var playersPosition : [Int] = [3, 3]
     
     var direction : directions!
+	
     enum directions {
         case north
         case northeast

@@ -13,11 +13,11 @@ class GameManager {
 	static let shared = GameManager()
 	
 	var map 			: Map!
-	var players 		: [Player]!
+	var players 		: [Player] = []
 	var currentPlayer 	: Player!
     var numberOfPlayers : Int!
 	
-	var turnsLeft 	: Int!
+	var turnsLeft 		: Int!
 	
 	
 	// >>>---------> GAME START
@@ -32,31 +32,55 @@ class GameManager {
 	
 	// >>>---------> DURING THE GAME
 	
-	func nextTurn () {
-		// Check Turns left
+	enum directions {
+		case north
+		case south
+		case east
+		case west
+	}
+	
+	func nextTurn (direction: directions) {
 		
-		// Move Players (if appliable)
+		if turnsLeft > 0 {
+			
+			// check next position on map
+			
+			// if trap OR safehouse {
+			//    device on the table -> end game
+			// } else {
+			//    pass the device -> new place info
+			//	  reset timer
+			//    turnsLeft -= 1
+			// }
+		} else {
+			
+			endGame(winner: .murderer)
+			
+		}
 		
-		// Check Player Location
+	}
+	
+	func getNextPlayer () {
 		
-		// if trap OR safehouse {
-		//    device on the table -> end game
-		// } else {
-		//    pass the device -> new place info
-		//	  reset timer
-		// }
+		// Array cycles through the players so
+		// the next player is always at index 0
+		currentPlayer = players[0]
 		
+		players.remove(at: 0)
+		players.append(currentPlayer)
 		
 	}
 	
 	// >>>---------> GAME ENDING
 	
-	enum winner {
+	enum winners {
 		case murderer
-		case inocents
+		case inocent
 	}
 	
-	func endGame (winner : winner ) {
+	var winner : winners!
+	
+	func endGame (winner : winners ) {
 		
 	}
 	
