@@ -9,7 +9,7 @@
 import UIKit
 
 class InputPlayersNameViewController: UIViewController {
-
+    
     @IBOutlet weak var nameText : UITextField!
     
     
@@ -30,16 +30,27 @@ class InputPlayersNameViewController: UIViewController {
 		refreshInterface()
 	}
     
-    @IBAction func createNewPlayerName(_ sender: Any){
-        if(nameText.text != ""){
-            GameManager.shared.players.append(Player(name: nameText.text!))
-            nameText.text = ""
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        if (verifyMaxNumberWasReached()){
-            print("Players names have been filled")
-            //            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        refreshInterface()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        refreshInterface()
+    }
+    
+    @IBAction func createNewPlayerName(_ sender: Any){
+        if let label = nameText.text{
+            GameManager.shared.players.append(Player(name: label))
         }
+
+//        if (verifyMaxNumberWasReached()){
+//            print("Players names have been filled")
+//            //            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,8 +76,8 @@ class InputPlayersNameViewController: UIViewController {
 			}
 		}
     }
-
     
-
+    
+    
 }
 

@@ -12,6 +12,7 @@ class GameManager {
 	
 	static let shared = GameManager()
 	
+	var players         : [Player] = []
 	var map 			: Map!
 	var players 		: [Player] = []
 	var currentPlayer 	: Player!
@@ -73,6 +74,9 @@ class GameManager {
 	
 	// >>>---------> GAME ENDING
 	
+    private init(){
+    }
+    
 	enum winners {
 		case murderer
 		case inocent
