@@ -32,6 +32,7 @@ class PassDeviceViewController: UIViewController {
 		if let vc = storyboard?.instantiateViewController(identifier: "Input Player Name") as? InputPlayersNameViewController {
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
+        
 	}
 	
 	@IBAction func currentPlace(_ sender: UIButton) {
