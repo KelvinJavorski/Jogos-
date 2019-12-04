@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F1E7C162396DB2300776AE3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1E7C152396DB2300776AE3 /* UIViewExtension.swift */; };
+		6F1EE9BE23983E630001944F /* PlayerStartInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */; };
 		6F893035238EEBF500BBCE75 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F893034238EEBF500BBCE75 /* Player.swift */; };
 		6F893037238EEC5800BBCE75 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F893036238EEC5800BBCE75 /* Place.swift */; };
 		6F89303B238EF27E00BBCE75 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89303A238EF27E00BBCE75 /* Map.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		6F1E7C152396DB2300776AE3 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerStartInfo.storyboard; sourceTree = "<group>"; };
 		6F893034238EEBF500BBCE75 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6F893036238EEC5800BBCE75 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		6F89303A238EF27E00BBCE75 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				6F893040238F075D00BBCE75 /* InputPlayersNames.storyboard */,
 				6F893046238F07AE00BBCE75 /* CurrentPlace.storyboard */,
 				6F893048238F07C900BBCE75 /* GameEnd.storyboard */,
+				6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F1EE9BE23983E630001944F /* PlayerStartInfo.storyboard in Resources */,
 				6F89304F238F080A00BBCE75 /* Credits.storyboard in Resources */,
 				6F893047238F07AE00BBCE75 /* CurrentPlace.storyboard in Resources */,
 				6F89304D238F07F600BBCE75 /* Options.storyboard in Resources */,
