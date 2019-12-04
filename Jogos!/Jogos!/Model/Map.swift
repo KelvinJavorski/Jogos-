@@ -149,10 +149,6 @@ class Map {
 	func distanceBetween(pos1 : [Int], pos2 : [Int]) {
 		
 	}
-    
-    func Positions() {
-    
-    }
 	
     func Directions(placePlayer : Place, placeTarget : Place){
     
