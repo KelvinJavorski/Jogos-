@@ -26,6 +26,8 @@ class Place {
 	}
     
 	var type : types = .empty
+    
+    init(){}
 	
 	init(name : String, imageName : String, type : types) {
 		self.name  = name

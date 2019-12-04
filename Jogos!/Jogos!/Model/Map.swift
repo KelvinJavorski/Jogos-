@@ -10,6 +10,9 @@ import Foundation
 
 class Map {
     var map : [[Place]] = [[]]
+    var mapSize : Int
+    
+    var numberOfPlayers : Int
     
     var playersPosition : [Int] = [3, 3]
     
@@ -24,16 +27,113 @@ class Map {
         case west
         case northwest
     }
-    
 	
 	// >>>---------> MAP GENERATION
-	
-    func generateMap (size: Int) {
-		
+    
+    init (size: Int, mapSize: Int, numberOfPlayers : Int) {
+		self.numberOfPlayers = numberOfPlayers
+        
 		createEmptyMap(size: 5)
-		
 		populateMap()
+        
+        DetermineAmount(numberOfPlayers : numberOfPlayers)
 		
+    }
+    
+    func Positions() {
+        DetermineAmount(numberOfPlayers: self.numberOfPlayers)
+        
+        let objects : [Place] = [Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty),
+                                 Place(name : "", imageName: "", type : .empty)].shuffled()
+        
+        var safeLine = Int.random(in: 0...3)
+        
+        for sessionToBePopulated in 0...mapSize-1 {
+            for placeToBePopulated in 0...mapSize-1 {
+                switch sessionToBePopulated {
+                case 0:
+                    switch placeToBePopulated {
+                    case 0:
+                        //NorthWest
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[0]
+                        break
+                    case mapSize/2:
+                        //North
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[1]
+                        break
+                    case mapSize:
+                        //NorthEast
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[2]
+                        break
+                    default: self.map[sessionToBePopulated][placeToBePopulated] = Place()
+                        break
+                    }
+                    break
+                case mapSize/2:
+                    switch placeToBePopulated {
+                    case 0:
+                        //East
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[3]
+                        break
+                    case mapSize/2:
+                        //Center
+                        self.map[sessionToBePopulated][placeToBePopulated] = Place(name : "", imageName: "", type : .empty)
+                        break
+                    case mapSize:
+                        //West
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[4]
+                        break
+                    default: self.map[sessionToBePopulated][placeToBePopulated] = Place()
+                        break
+                    }
+                    break
+                case mapSize:
+                    switch placeToBePopulated {
+                    case 0:
+                        //SouthWest
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[5]
+                        break
+                    case mapSize/2:
+                        //South
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[6]
+                        break
+                    case mapSize:
+                        //SouthEast
+                        self.map[sessionToBePopulated][placeToBePopulated] = objects[7]
+                        break
+                    default: self.map[sessionToBePopulated][placeToBePopulated] = Place()
+                        break
+                    }
+                    break
+                default: break
+                }
+            }
+        }
+    }
+    
+    func DetermineAmount(numberOfPlayers : Int) {
+        if (numberOfPlayers % 2 == 0) {
+            self.mapSize = 5 + (numberOfPlayers - 5)/2
+        }
+//        for sessionToBePopulated in 0...mapSize-1 {
+//            for placeToBePopulated in 0...mapSize-1 {
+//                self.map[sessionToBePopulated][placeToBePopulated] = Place()
+//            }
+//        }
+    }
+    
+    func populateMap() {
+        // Put Safehouse
+        
+        // Put Misc Places
+        
+        // Put Traps
     }
     
 	func createEmptyMap(size: Int){
@@ -43,15 +143,6 @@ class Map {
 			}
 		}
 	}
-	
-	func populateMap() {
-		// Put Safehouse
-		
-		// Put Misc Places
-		
-		// Put Traps
-	}
-	
 	
 	// >>>---------> DIRECTIONS
 	
