@@ -21,15 +21,39 @@ class CurrentPlaceViewController: UIViewController {
 		refreshInterface()
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		
 		refreshInterface()
 	}
+	
+	@IBAction func north(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func south(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func west(_ sender: UIButton) {
+		
+		
+	}
+	
+	@IBAction func east(_ sender: UIButton) {
+		
+		
+	}
     
 	@IBAction func passDevice(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
+		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
+			self.navigationController?.popToViewController(vc, animated: true)
+		} else  {
+			if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
+				self.navigationController?.pushViewController(vc, animated: true)
+			}
 		}
 	}
 	

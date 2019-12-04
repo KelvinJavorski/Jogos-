@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nU9-kL-HlS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nU9-kL-HlS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +69,7 @@
         <!--Game Setup-->
         <scene sceneID="XII-sQ-2Ko">
             <objects>
-                <viewControllerPlaceholder storyboardName="GameSetup" referencedIdentifier="Game Setup" id="O53-tW-qQA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Game Setup" storyboardName="GameSetup" referencedIdentifier="Game Setup" id="O53-tW-qQA" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pzn-6M-FqP"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e0-Wj-X2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -79,7 +79,7 @@
         <!--Options-->
         <scene sceneID="gsV-YX-KF5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Options" referencedIdentifier="Options" id="Irk-X3-Tpb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Options" storyboardName="Options" referencedIdentifier="Options" id="Irk-X3-Tpb" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Ay2-SB-R5L"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2H-Ii-VaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
         <!--Credits-->
         <scene sceneID="SZe-JM-nRX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Credits" referencedIdentifier="Credits" id="3Gf-KI-Oeq" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Credits" storyboardName="Credits" referencedIdentifier="Credits" id="3Gf-KI-Oeq" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3i6-rh-o21"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hx6-WR-6zU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

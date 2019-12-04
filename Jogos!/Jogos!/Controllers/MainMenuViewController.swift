@@ -12,7 +12,6 @@ class MainMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
@@ -23,6 +22,8 @@ class MainMenuViewController: UIViewController {
 	}
 	
 	@IBAction func options(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "Options", bundle: nil)
+//        let vc = storyboard.instantiateInitialViewController() as! OptionsViewController
 		if let vc = storyboard?.instantiateViewController(identifier: "Options") as? OptionsViewController {
 			self.navigationController?.pushViewController(vc, animated: true)
 		}

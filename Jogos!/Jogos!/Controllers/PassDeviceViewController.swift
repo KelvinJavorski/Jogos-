@@ -21,8 +21,8 @@ class PassDeviceViewController: UIViewController {
 		refreshInterface()
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		
 		refreshInterface()
 	}
@@ -32,6 +32,7 @@ class PassDeviceViewController: UIViewController {
 		if let vc = storyboard?.instantiateViewController(identifier: "Input Player Name") as? InputPlayersNameViewController {
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
+        
 	}
 	
 	@IBAction func currentPlace(_ sender: UIButton) {

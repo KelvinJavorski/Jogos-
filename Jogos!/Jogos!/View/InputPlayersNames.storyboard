@@ -28,9 +28,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Done!"/>
                                 <connections>
+                                    <action selector="createNewPlayerName:" destination="EIY-x6-uu1" eventType="touchUpInside" id="cHi-Ab-gZn"/>
                                     <action selector="passDevice:" destination="EIY-x6-uu1" eventType="touchUpInside" id="nC0-6X-AXS"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjf-4f-ETJ">
+                                <rect key="frame" x="159" y="431" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -40,6 +47,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dej-Ta-Z3Q"/>
                     </view>
+                    <connections>
+                        <outlet property="nameText" destination="hjf-4f-ETJ" id="GQP-uz-sce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uey-Cn-kh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +58,7 @@
         <!--Pass Device-->
         <scene sceneID="ryU-vt-WD1">
             <objects>
-                <viewControllerPlaceholder storyboardName="PassDevice" referencedIdentifier="Pass Device" id="Gv2-LU-uUH" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Pass Device" storyboardName="PassDevice" referencedIdentifier="Pass Device" id="Gv2-LU-uUH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzL-o2-bRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="419"/>
