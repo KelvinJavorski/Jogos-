@@ -10,34 +10,24 @@ import Foundation
 
 class Map {
     var map : [[Place]] = [[]]
-    var mapSize : Int
+	var mapSize : Int = 7
     
-    var numberOfPlayers : Int
+    var numberOfPlayers : Int!
     
     var playersPosition : [Int] = [3, 3]
     
     var direction : directions!
 	
-    enum directions {
-        case north
-        case northeast
-        case east
-        case southeast
-        case south
-        case southwest
-        case west
-        case northwest
-    }
+    
 	
 	// >>>---------> MAP GENERATION
     
     init (size: Int, mapSize: Int, numberOfPlayers : Int) {
 		self.numberOfPlayers = numberOfPlayers
         
-		createEmptyMap(size: 5)
-		populateMap()
-        
-        DetermineAmount(numberOfPlayers : numberOfPlayers)
+		self.createEmptyMap(size: mapSize)
+		self.mapSize = mapSize
+		
 		
     }
     
@@ -170,6 +160,8 @@ class Map {
 	func distanceBetween(placePlayer : Place, placeTarget : Place) {
 		
 	}
+	
+    func Directions(placePlayer : Place, placeTarget : Place) {
     
     func Directions(placePlayer : Place, placeTarget : Place) {
         if (placePlayer.coordenate.x == placeTarget.coordenate.x) {
