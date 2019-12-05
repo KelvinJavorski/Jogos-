@@ -10,7 +10,7 @@
         <!--Player Start Info View Controller-->
         <scene sceneID="v5Z-bx-ZAh">
             <objects>
-                <viewController id="BdJ-4w-vkP" customClass="PlayerStartInfoViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Player Start Info" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BdJ-4w-vkP" customClass="PlayerStartInfoViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6oi-tI-KAf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

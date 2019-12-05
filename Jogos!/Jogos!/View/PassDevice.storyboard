@@ -61,6 +61,12 @@ Player Name</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDS-0g-X8L" userLabel="Bottom">
                                 <rect key="frame" x="0.0" y="657.5" width="414" height="204.5"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-TV-ulA">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
+                                        <connections>
+                                            <action selector="nextScreen:" destination="mTP-1K-mNP" eventType="touchUpInside" id="fHy-9S-4hn"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-sl-utN">
                                         <rect key="frame" x="10" y="10" width="394" height="184.5"/>
                                         <string key="text">Hold here is you are 
@@ -75,6 +81,10 @@ Player Name</string>
                                     <constraint firstItem="3Sm-sl-utN" firstAttribute="leading" secondItem="hDS-0g-X8L" secondAttribute="leading" constant="10" id="3dw-Er-QG8"/>
                                     <constraint firstAttribute="bottom" secondItem="3Sm-sl-utN" secondAttribute="bottom" constant="10" id="FdH-Io-OMs"/>
                                     <constraint firstItem="3Sm-sl-utN" firstAttribute="top" secondItem="hDS-0g-X8L" secondAttribute="top" constant="10" id="HeB-w8-dLh"/>
+                                    <constraint firstAttribute="trailing" secondItem="xv2-TV-ulA" secondAttribute="trailing" id="TkS-2y-4MA"/>
+                                    <constraint firstItem="xv2-TV-ulA" firstAttribute="leading" secondItem="hDS-0g-X8L" secondAttribute="leading" id="Yy3-Mu-cfy"/>
+                                    <constraint firstItem="xv2-TV-ulA" firstAttribute="top" secondItem="hDS-0g-X8L" secondAttribute="top" id="dhs-Vm-1BY"/>
+                                    <constraint firstAttribute="bottom" secondItem="xv2-TV-ulA" secondAttribute="bottom" id="hd5-Nv-bZL"/>
                                     <constraint firstAttribute="trailing" secondItem="3Sm-sl-utN" secondAttribute="trailing" constant="10" id="tr4-q6-9Ub"/>
                                 </constraints>
                             </view>
@@ -96,6 +106,10 @@ Player Name</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6ag-xe-fgB"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomLabel" destination="3Sm-sl-utN" id="19M-1P-cca"/>
+                        <outlet property="label" destination="4RP-TM-pcR" id="lZq-lX-eFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0W9-Gh-YT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

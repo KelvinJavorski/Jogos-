@@ -124,7 +124,6 @@
 		6F893039238EEE8600BBCE75 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6FAD07862390427E005C990B /* PassDeviceViewController.swift */,
 				6FF9DF42239877C300C36D94 /* Working */,
 				6FF9DF41239877A800C36D94 /* Finished */,
 				6FAD077E23904253005C990B /* MainMenuViewController.swift */,
@@ -157,6 +156,7 @@
 		6FF9DF42239877C300C36D94 /* Working */ = {
 			isa = PBXGroup;
 			children = (
+				6FAD07862390427E005C990B /* PassDeviceViewController.swift */,
 				6FF9DF3F239877A400C36D94 /* PlayerStartInfoViewController.swift */,
 			);
 			path = Working;

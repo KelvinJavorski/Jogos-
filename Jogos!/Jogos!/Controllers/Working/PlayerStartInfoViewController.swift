@@ -45,8 +45,9 @@ class PlayerStartInfoViewController: UIViewController {
 	}
 	
 	@IBAction func nextPlayer(_ sender: UIButton) {
+		GameManager.shared.hasShownPlayerInfo()
 		
-		GameManager.shared.currentPlayer = GameManager.shared.getNextPlayer()
+		// Go to pass device screen
 		/*
 		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
 			self.navigationController?.popToViewController(vc, animated: true)
