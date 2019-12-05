@@ -14,10 +14,10 @@ class Player {
 	
 	enum alignments  {
 		case murderer
-		case inocent
+		case innocent
 	}
 	
-	var alignment : alignments =  .inocent
+	var alignment : alignments =  .innocent
 	
 	var place : Place!
 	

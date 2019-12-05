@@ -34,11 +34,12 @@ class GameManager {
 	
 	// >>>---------> GAME START
 	
-	func setupGame () {
+    func setupGame (numberOfPlayers: Int, nameOfPlayers: [String]) {
 		// Generate new map
 		
+        // Initialize Players
+ 
 		// Reset Turns Left
-	
 		
 	}
 	
@@ -64,7 +65,16 @@ class GameManager {
 		}
 		
 	}
-	
+    
+    func randomizeAlignment (numberOfPlayers : Int) -> [Player.alignments]
+    {
+        let innocent = Player.alignments.innocent
+        let murderer = Player.alignments.murderer
+        let sequenceOfAlignments = [innocent, murderer, innocent, innocent]
+        
+        return sequenceOfAlignments.shuffled()
+    }
+    
 	func getNextPlayer () -> Player {
 		
 		// Array cycles through the players so
