@@ -21,10 +21,23 @@ class Player {
 	
 	var place : Place!
 	
+	var secondPlace : Place!
+	var directionToSecondPlace : directions!
+	
 	init (name: String) {
 		self.name = name
-//		self.alignment = alignment
+	}
+	
+	init (name: String, alignment: alignments, place: Place, secondPlace: Place) {
+		self.name  = name
+		self.alignment = alignment
+		self.place = place
+		self.secondPlace = secondPlace
+		
+//		GET DIRECTION TO SECOND PLACE!!!!
 		
 	}
+	
+	
 	
 }

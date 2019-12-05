@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Player Start Info View Controller-->
         <scene sceneID="v5Z-bx-ZAh">
             <objects>
-                <viewController id="BdJ-4w-vkP" sceneMemberID="viewController">
+                <viewController id="BdJ-4w-vkP" customClass="PlayerStartInfoViewController" customModule="Jogos_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6oi-tI-KAf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,9 @@ is a GREAT STATUE.</string>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-mD-XIE" userLabel="Next Player">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
+                                        <connections>
+                                            <action selector="nextPlayer:" destination="BdJ-4w-vkP" eventType="touchUpInside" id="iT9-iB-Wo6"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b47-J2-j7C">
                                         <rect key="frame" x="10" y="10" width="394" height="184.5"/>
@@ -146,6 +149,12 @@ pass to next player</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8i-Hh-UCQ"/>
                     </view>
+                    <connections>
+                        <outlet property="alignmentLabel" destination="dGD-O6-Ind" id="qWs-fO-rJn"/>
+                        <outlet property="objectiveLabel" destination="4n2-FX-YFI" id="AOt-jh-5mV"/>
+                        <outlet property="objectsInfoLabel" destination="ZeS-5j-Kkh" id="NV9-8P-t2S"/>
+                        <outlet property="playerNameLabel" destination="xkg-xV-u4l" id="Wo7-1M-YpN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPH-0L-z05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
