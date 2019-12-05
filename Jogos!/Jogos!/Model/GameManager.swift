@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum  directions {
+enum directions {
 	case north
 	case south
 	case east
@@ -18,6 +18,7 @@ enum  directions {
 	case southeast
 	case northwest
 	case southwest
+    case on
 }
 
 class GameManager {
@@ -163,6 +164,8 @@ class GameManager {
 			return "SOUTHEAST"
 		case .southwest:
 			return "SOUTHWEST"
+        case .on:
+            return "ON"
 		}
 	}
 	
