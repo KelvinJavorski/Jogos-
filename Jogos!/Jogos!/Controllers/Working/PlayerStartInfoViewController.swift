@@ -36,7 +36,7 @@ class PlayerStartInfoViewController: UIViewController {
 		
 //		let firstObj = player.place.name
 //		let distance = GameManager.map.distanceBetween(group, player.place)
-//		let direction = GameManager.map.Directions(placePlayer: group, placeTarget: player.place)
+//		let direction = GameManager.map.directionBetween(from: group, to: player.place)
 //		let secondObj = player.secondPlace.name
 //		let direction2 = player.directionToSecondPlace
 		
