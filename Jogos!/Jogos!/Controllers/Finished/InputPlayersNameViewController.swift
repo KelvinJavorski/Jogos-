@@ -78,17 +78,20 @@ class InputPlayersNameViewController: UIViewController {
 	
 	@IBAction func startGame(_ sender: UIButton) {
 		
+		var playerNames : [String] = []
+		
 		for i in 1 ... 4 + extraPlayers {
 			if textFields[i].text != ""  {
 				if let playerName = textFields[i].text {
-					GameManager.shared.players.append(Player(name: playerName))
+					playerNames.append(playerName)
 				}
 			} else {
 				let playerName = String(format: "Player %d", i)
-				GameManager.shared.players.append(Player(name: playerName))
+				playerNames.append(playerName)
 			}
 		}
 		
+		GameManager.shared.setupGame(playerNames: playerNames)
 		passDevice()
 	}
 	

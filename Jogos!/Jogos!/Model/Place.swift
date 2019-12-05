@@ -19,6 +19,7 @@ class Place {
     var coordenate : coordenate!
 	
 	enum types {
+		case spawn
 		case trap
 		case empty
 		case misc

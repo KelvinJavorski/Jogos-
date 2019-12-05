@@ -30,25 +30,48 @@ class GameManager {
 	var currentPlayer 	: Player!
     var numberOfPlayers : Int!
 	
-	var turnsLeft 		: Int!
+	var dayTurnsLeft 	: Int!
+	var playersInfoLeft : Int!
 	
+	enum gameStates {
+		case settingup
+		case initialInfo
+		case dayCycle
+		case nightCycle
+		case ended
+	}
+	
+	var gameState : gameStates = .settingup
 	
 	// >>>---------> GAME START
 	
-    func setupGame (numberOfPlayers: Int, nameOfPlayers: [String]) {
+	func setupGame (playerNames: [String]) {
+		// Create Players from names array
+		
 		// Generate new map
 		
         // Initialize Players
  
 		// Reset Turns Left
 		
+		playersInfoLeft = playerNames.count
+		gameState = .initialInfo
+	}
+	
+	func hasShownPlayerInfo () {
+		playersInfoLeft -= 1
+		
+		if playersInfoLeft >= 0 {
+			gameState = .dayCycle
+		}
 	}
 	
 	// >>>---------> DURING THE GAME
 	
+	
+	
 	func nextTurn (direction: directions) {
-		
-		if turnsLeft > 0 {
+		if dayTurnsLeft > 0 {
 			
 			// check next position on map
 			
@@ -64,7 +87,17 @@ class GameManager {
 			endGame(winner: .murderer)
 			
 		}
+	}
+	
+	func hasGameEnded () -> Bool {
 		
+		if dayTurnsLeft > 0 {
+			
+			gameState = .nightCycle
+			return true
+		}
+		
+		return false
 	}
     
     func randomizeAlignment (numberOfPlayers : Int) -> [Player.alignments]
