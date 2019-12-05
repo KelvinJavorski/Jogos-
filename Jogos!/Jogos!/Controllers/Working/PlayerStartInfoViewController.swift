@@ -42,13 +42,12 @@ class PlayerStartInfoViewController: UIViewController {
 		
 //		objectsInfoLabel.attributtedText = GameManager.shared.getAttrStrObjects(firstObj: firstObj, distance: distance, direction: direction, secondObject: secondObj, direction2: direction2)
 		
-		
 	}
 	
 	@IBAction func nextPlayer(_ sender: UIButton) {
 		
 		GameManager.shared.currentPlayer = GameManager.shared.getNextPlayer()
-		
+		/*
 		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
 			self.navigationController?.popToViewController(vc, animated: true)
 		} else {
@@ -56,6 +55,7 @@ class PlayerStartInfoViewController: UIViewController {
 				self.navigationController?.pushViewController(vc, animated: true)
 			}
 		}
+*/
 	}
 	
     override func viewDidLoad() {

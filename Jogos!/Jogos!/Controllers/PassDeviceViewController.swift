@@ -10,8 +10,13 @@ import UIKit
 
 class PassDeviceViewController: UIViewController {
 
+	var player : Player!
+	
 	func refreshInterface () {
 		// RELOAD INFO THAT SHOWS ONSCREEN
+		
+		
+		
 		
 	}
 	
