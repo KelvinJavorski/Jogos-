@@ -77,6 +77,7 @@ class InputPlayersNameViewController: UIViewController {
 	}
 	
 	@IBAction func startGame(_ sender: UIButton) {
+		
 		for i in 1 ... 4 + extraPlayers {
 			if textFields[i].text != ""  {
 				if let playerName = textFields[i].text {
