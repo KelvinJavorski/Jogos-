@@ -25,7 +25,6 @@ class Map {
 		self.createEmptyMap(size: mapSize)
 		self.mapSize = mapSize
 		
-		
     }
     
 //    func Positions() {

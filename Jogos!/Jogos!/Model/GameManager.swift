@@ -47,7 +47,8 @@ class GameManager {
 	
 	func setupGame (playerNames: [String]) {
 		// Create Players from names array
-		
+        players = setupPlayers(playerNames: playerNames)
+        
 		// Generate new map
 		
         // Initialize Players
@@ -58,6 +59,16 @@ class GameManager {
 		gameState = .initialInfo
 	}
 	
+    func setupPlayers(playerNames: [String]) -> [Player]{
+        var listOfPlayers : [Player] = []
+        let listOfAlignments = randomizeAlignment(numberOfPlayers: playerNames.count)
+        for (index, name) in playerNames.enumerated(){
+            let player = Player(name: name, alignment: listOfAlignments[index], place: Place(), secondPlace: Place())
+            listOfPlayers.append(player)
+        }
+        return listOfPlayers
+    }
+    
 	func hasShownPlayerInfo () {
 		playersInfoLeft -= 1
 		
