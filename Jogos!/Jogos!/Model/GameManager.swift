@@ -26,9 +26,9 @@ class GameManager {
 	static let shared = GameManager()
 	
 	var players         : [Player] = []
+	var navigator		: Navigator = Navigator()
 	var currentPlayer 	: Player!
-    var numberOfPlayers : Int!
-    var navigator       : Navigator!
+    var numberOfPlayers : Int = 0
 	
 	var dayTurnsLeft 	: Int!
 	var playersInfoLeft : Int!
@@ -51,22 +51,39 @@ class GameManager {
         
 		// Create Players from names array
         players = setupPlayers(playerNames: playerNames)
- 
-		// Reset Turns Left
+		numberOfPlayers = playerNames.count
 		
-		playersInfoLeft = playerNames.count
+		// Generate new map
+		navigator.initialize(mapSize: 7, groupPosition: position(x: 3, y: 3))
+		
+		// Reset Turns Left
+		dayTurnsLeft = numberOfPlayers * 3
+		playersInfoLeft = numberOfPlayers
+		
+		// Set game state
 		gameState = .initialInfo
 	}
 	
     func setupPlayers(playerNames: [String]) -> [Player]{
+		
         var listOfPlayers : [Player] = []
+		
         let listOfAlignments = randomizeAlignment(numberOfPlayers: playerNames.count)
         let listOfPlaces = listOfPlacesAvailable()
         
         //Define both places for each player before initialize
         
         for (index, name) in playerNames.enumerated(){
-            let player = Player(name: name, alignment: listOfAlignments[index], place: Place(), secondPlace: Place())
+			
+			let player = Player(infos: [
+				.name: name,
+				.alignment: listOfAlignments[index]//,
+				//.firstPlace: Place,
+				//.secondPlace: Place,
+				//.distanceBetweenPlaces: Int
+				//.directionToSecondPlace: directions
+				])
+			
             listOfPlayers.append(player)
         }
         return listOfPlayers
@@ -164,10 +181,7 @@ class GameManager {
 	
 	// >>>---------> GAME ENDING
 	
-	
-	
-    private init(){
-    }
+	private init(){}
     
 	enum winners {
 		case murderer
@@ -184,6 +198,8 @@ class GameManager {
 	
 	let innocentObjective = "You were visiting the Island with a group of tourists when you got lost.\nFind the BOAT that took you here before nightfall to save yourself."
 	
+	let murdererObjective = ""
+	
 	let normalTextAtributes : [NSAttributedString.Key:Any] =
 		[.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
 		 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: .regular)]
@@ -193,12 +209,13 @@ class GameManager {
 		 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: .semibold)]
 	
 	
-	func getAttrStrInnocentObjective () -> NSMutableAttributedString {
+	func getAttrStrObjective (objective: String) -> NSMutableAttributedString {
 		
-		let attributedStr = NSMutableAttributedString(string: innocentObjective, attributes: normalTextAtributes)
+		let attributedStr = NSMutableAttributedString(string: objective, attributes: normalTextAtributes)
 		
-		let location = innocentObjective.distance(from: innocentObjective.startIndex, to: innocentObjective.firstIndex(of: "B")!)
-		attributedStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20.0, weight: .semibold), range: NSRange(location: location, length: 4))
+		let range : NSRange = NSString(string: objective).range(of: "BOAT")
+			
+		attributedStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20.0, weight: .semibold), range: range)
 		
 		return attributedStr
 	}

@@ -11,7 +11,6 @@ import UIKit
 class InputPlayersNameViewController: UIViewController {
     
 	// TEXTFIELDS OUTLETS
-	var textFields : [UITextField] =  []
     @IBOutlet weak var player1TextField: UITextField!
 	@IBOutlet weak var player2TextField: UITextField!
 	@IBOutlet weak var player3TextField: UITextField!
@@ -22,130 +21,105 @@ class InputPlayersNameViewController: UIViewController {
 	@IBOutlet weak var player8TextField: UITextField!
 	
 	// HAS PLAYER VIEWS
-	var extraPlayerViews : [UIView] = []
-	@IBOutlet weak var player5View: UIView!
-	@IBOutlet weak var player6View: UIView!
-	@IBOutlet weak var player7View: UIView!
-	@IBOutlet weak var player8View: UIView!
-	
-	// ADD PLAYER VIEW
-	@IBOutlet weak var addPlayerView: RoundedCornerView!
-	
-	var addConstraits : [NSLayoutConstraint] = []
-	@IBOutlet weak var addPlayer5Constraint: NSLayoutConstraint!
-	@IBOutlet weak var addPlayer6Constraint: NSLayoutConstraint!
-	@IBOutlet weak var addPlayer7Constraint: NSLayoutConstraint!
-	@IBOutlet weak var addPlayer8Constraint: NSLayoutConstraint!
+	@IBOutlet weak var player1View: RoundedCornerView!
+	@IBOutlet weak var player2View: RoundedCornerView!
+	@IBOutlet weak var player3View: RoundedCornerView!
+	@IBOutlet weak var player4View: RoundedCornerView!
+	@IBOutlet weak var player5View: RoundedCornerView!
+	@IBOutlet weak var player6View: RoundedCornerView!
+	@IBOutlet weak var player7View: RoundedCornerView!
+	@IBOutlet weak var player8View: RoundedCornerView!
 	
 	// REMOVE PLAYER VIEW
-	@IBOutlet weak var removePlayerView: RoundedCornerView!
+	@IBOutlet weak var removePlayer1View: RoundedCornerView!
+	@IBOutlet weak var removePlayer2View: RoundedCornerView!
+	@IBOutlet weak var removePlayer3View: RoundedCornerView!
+	@IBOutlet weak var removePlayer4View: RoundedCornerView!
+	@IBOutlet weak var removePlayer5View: RoundedCornerView!
+	@IBOutlet weak var removePlayer6View: RoundedCornerView!
+	@IBOutlet weak var removePlayer7View: RoundedCornerView!
+	@IBOutlet weak var removePlayer8View: RoundedCornerView!
 	
-	var removeConstraints: [NSLayoutConstraint] = []
-	@IBOutlet weak var removePlayer5Constraint: NSLayoutConstraint!
-	@IBOutlet weak var removePlayer6Constraint: NSLayoutConstraint!
-	@IBOutlet weak var removePlayer7Constraint: NSLayoutConstraint!
-	@IBOutlet weak var removePlayer8Constraint: NSLayoutConstraint!
-	
-	var extraPlayers = 0
-    
-	func refreshInterface () { // RELOAD INFO ON THE SCREEN
-		
-		extraPlayers = 0
-		
-		for textField in textFields {
-			textField.text = ""
-			textField.placeholder = "Type the name of the player"
-		}
-		
-		for playerView in extraPlayerViews {
-			playerView.isHidden = true
-		}
-		
-		updateButtonsPositions()
+	struct playerInput {
+		var view : RoundedCornerView!
+		var removeView : RoundedCornerView!
+		var textField : UITextField!
 	}
 	
-	@IBAction func addPlayer(_ sender: UIButton) {
-		extraPlayers += 1
-		if extraPlayers > 4 { extraPlayers = 4 }
-		updateButtonsPositions()
+	var playerInputs : [playerInput]!
+    
+	func refreshInterface () { // RELOAD INFO ON THE SCREEN
+		for playerInput in playerInputs   {
+			playerInput.textField.text = ""
+			playerInput.textField.placeholder = "Type the name of the player"
+			playerInput.view.isHidden = true
+			playerInput.removeView.isHidden = true
+		}
+		
+		playerInputs[0].view.isHidden = false
+	}
+	
+	func updateNameCells () {
+		var names = getNames()
+		
+		for i in 0 ... playerInputs.count - 1 {
+			let playerInput = playerInputs[i]
+			
+			if names.count > 0 {
+				let name = names[0]
+				playerInput.textField.text 		= name
+				playerInput.view.isHidden 		= false
+				playerInput.removeView.isHidden = false
+				names.remove(at: 0)
+			} else {
+				playerInput.textField.text 		= ""
+				playerInput.removeView.isHidden = true
+				if playerInputs[i - 1].textField.text != ""{
+					playerInput.view.isHidden 	= false
+				} else {
+					playerInput.view.isHidden 	= true
+				}
+			}
+		}
+	}
+	
+	func getNames () -> [String] {
+		var names : [String] = []
+		for playerInput in playerInputs {
+			if playerInput.textField.text != "" {
+				names.append(playerInput.textField.text!)
+			}
+		}
+		return names
 	}
 	
 	@IBAction func removePlayer(_ sender: UIButton) {
-		extraPlayers -= 1
-		if extraPlayers < 0 { extraPlayers = 0 }
-		updateButtonsPositions()
+		playerInputs[sender.tag].textField.text = ""
+		updateNameCells()
 	}
 	
 	@IBAction func startGame(_ sender: UIButton) {
+		let names = getNames()
 		
-		var playerNames : [String] = []
+		GameManager.shared.setupGame(playerNames: names)
 		
-		for i in 1 ... 4 + extraPlayers {
-			if textFields[i].text != ""  {
-				if let playerName = textFields[i].text {
-					playerNames.append(playerName)
-				}
-			} else {
-				let playerName = String(format: "Player %d", i)
-				playerNames.append(playerName)
-			}
-		}
-		
-		GameManager.shared.setupGame(playerNames: playerNames)
-		passDevice()
-	}
-	
-	private func updateButtonsPositions () {
-		for playerView in extraPlayerViews {
-			playerView.isHidden = true
-		}
-		
-		for i in 0 ... extraPlayers {
-			extraPlayerViews[i].isHidden = false
-		}
-		
-		if extraPlayers != 0 {
-			removePlayerView.isHidden = false
-			
-			for constraint in removeConstraints {
-				constraint.priority = UILayoutPriority(rawValue: 1)
-			}
-			
-			removeConstraints[extraPlayers - 1].priority = UILayoutPriority(rawValue: 1000)
-		} else {
-			removePlayerView.isHidden = true
-		}
-		
-		if extraPlayers != 4 {
-			addPlayerView.isHidden = false
-			
-			for constraint in addConstraits {
-				constraint.priority = UILayoutPriority(rawValue: 1)
-			}
-			
-			addConstraits[extraPlayers].priority = UILayoutPriority(rawValue: 1000)
-		} else {
-			addPlayerView.isHidden = true
-		}
-	}
-
-	func passDevice() {
-		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
-			self.navigationController?.popToViewController(vc, animated: true)
-		} else {
-			if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
-				self.navigationController?.pushViewController(vc, animated: true)
-			}
+		if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
+			self.navigationController?.pushViewController(vc, animated: true)
 		}
 	}
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-		textFields = [player1TextField, player2TextField, player3TextField, player4TextField, player5TextField, player6TextField, player7TextField, player8TextField]
-		extraPlayerViews = [player5View, player6View, player7View, player8View]
-		removeConstraints = [removePlayer5Constraint, removePlayer6Constraint, removePlayer7Constraint, removePlayer8Constraint]
-		addConstraits = [addPlayer5Constraint, addPlayer6Constraint, addPlayer7Constraint, addPlayer8Constraint]
+		
+		playerInputs = [
+			playerInput(view: player1View, removeView: removePlayer1View, textField: player1TextField),
+			playerInput(view: player2View, removeView: removePlayer2View, textField: player2TextField),
+			playerInput(view: player3View, removeView: removePlayer3View, textField: player3TextField),
+			playerInput(view: player4View, removeView: removePlayer4View, textField: player4TextField),
+			playerInput(view: player5View, removeView: removePlayer5View, textField: player5TextField),
+			playerInput(view: player6View, removeView: removePlayer6View, textField: player6TextField),
+			playerInput(view: player7View, removeView: removePlayer7View, textField: player7TextField),
+			playerInput(view: player8View, removeView: removePlayer8View, textField: player8TextField)]
 		
         refreshInterface()
     }
@@ -166,10 +140,10 @@ class InputPlayersNameViewController: UIViewController {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
-    
-	
-    
-    
-    
 }
 
+extension InputPlayersNameViewController : UITextFieldDelegate  {
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		self.updateNameCells()
+	}
+}

@@ -30,7 +30,7 @@ class Player {
 	
 	var place 					: Place = Place()
 	var secondPlace 			: Place = Place()
-	var directionToSecondPlace 	: directions = .north
+	var directionToSecondPlace 	: directions = .on
 	var distanceToSecondPlace  	: Int = 0
 	
 	init (name: String) {

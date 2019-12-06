@@ -109,7 +109,6 @@
 		6F893038238EEE2700BBCE75 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6F893042238F077200BBCE75 /* PassDevice.storyboard */,
 				6FB5B7F2239895B600A143F0 /* Finished */,
 				B66512C52386FB2A000E20C5 /* LaunchScreen.storyboard */,
 				B66512BD2386FB28000E20C5 /* Main.storyboard */,
@@ -142,6 +141,7 @@
 		6FB5B7F2239895B600A143F0 /* Finished */ = {
 			isa = PBXGroup;
 			children = (
+				6F893042238F077200BBCE75 /* PassDevice.storyboard */,
 				6F893040238F075D00BBCE75 /* InputPlayersNames.storyboard */,
 				6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */,
 			);
