@@ -26,9 +26,9 @@ class GameManager {
 	static let shared = GameManager()
 	
 	var players         : [Player] = []
-	var map 			: Map!
 	var currentPlayer 	: Player!
     var numberOfPlayers : Int!
+    var navigator       : Navigator!
 	
 	var dayTurnsLeft 	: Int!
 	var playersInfoLeft : Int!
@@ -46,12 +46,11 @@ class GameManager {
 	// >>>---------> GAME START
 	
 	func setupGame (playerNames: [String]) {
+        //Generate new map
+        navigator = Navigator(mapSize: 7, groupPosition: position(x: 1, y: 1))
+        
 		// Create Players from names array
         players = setupPlayers(playerNames: playerNames)
-        
-		// Generate new map
-		
-        // Initialize Players
  
 		// Reset Turns Left
 		
@@ -62,11 +61,42 @@ class GameManager {
     func setupPlayers(playerNames: [String]) -> [Player]{
         var listOfPlayers : [Player] = []
         let listOfAlignments = randomizeAlignment(numberOfPlayers: playerNames.count)
+        let listOfPlaces = listOfPlacesAvailable()
+        
+        //Define both places for each player before initialize
+        
         for (index, name) in playerNames.enumerated(){
             let player = Player(name: name, alignment: listOfAlignments[index], place: Place(), secondPlace: Place())
             listOfPlayers.append(player)
         }
         return listOfPlayers
+    }
+    
+    func listOfPlacesAvailable() -> [Place]{
+        var listOfPlaces : [Place] = []
+        for i in (0...navigator!.map.mapSize){
+            for j in (0...navigator!.map.mapSize){
+                if (navigator!.map.map[i][j].type == .empty){
+                    print("vazio")
+                }
+                else{
+                    listOfPlaces.append(navigator!.map.map[i][j])
+                }
+            }
+        }
+        return listOfPlaces
+    }
+    
+    func defineEachPlayerPlaces(players : [Player]){
+        for player in players{
+            //Define players reference places.
+            if (player.alignment == .murderer){
+                player.place = Place(name: "", imageName: "", type: .safehouse)
+            }
+            else{
+                player.place = Place(name: "", imageName: "", type: .empty)
+            }
+        }
     }
     
 	func hasShownPlayerInfo () {
