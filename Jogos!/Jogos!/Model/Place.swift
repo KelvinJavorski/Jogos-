@@ -10,7 +10,7 @@ import Foundation
 
 class Place {
 	
-	var name : String = ""
+	var name 	  : String = ""
 	var imageName : String = ""
     struct coordenate {
         var x : Int!
@@ -30,7 +30,7 @@ class Place {
     
     init(){}
 	
-	init(name : String, imageName : String, type : types) {
+	init(name: String, imageName: String, type: types) {
 		self.name  = name
 		self.imageName = imageName
 		self.type = type
