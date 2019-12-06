@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64FD984223997AC0004BB807 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FD984123997AC0004BB807 /* Navigator.swift */; };
+		64FD9844239AE7AB004BB807 /* MoveGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FD9843239AE7AB004BB807 /* MoveGroup.storyboard */; };
 		6F1E7C162396DB2300776AE3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1E7C152396DB2300776AE3 /* UIViewExtension.swift */; };
 		6F1EE9BE23983E630001944F /* PlayerStartInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */; };
 		6F893035238EEBF500BBCE75 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F893034238EEBF500BBCE75 /* Player.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		64FD984123997AC0004BB807 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		64FD9843239AE7AB004BB807 /* MoveGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoveGroup.storyboard; sourceTree = "<group>"; };
 		6F1E7C152396DB2300776AE3 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		6F1EE9BD23983E630001944F /* PlayerStartInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerStartInfo.storyboard; sourceTree = "<group>"; };
 		6F893034238EEBF500BBCE75 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				6F89303E238F073600BBCE75 /* GameSetup.storyboard */,
 				6F893046238F07AE00BBCE75 /* CurrentPlace.storyboard */,
 				6F893048238F07C900BBCE75 /* GameEnd.storyboard */,
+				64FD9843239AE7AB004BB807 /* MoveGroup.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				B66512C42386FB2A000E20C5 /* Assets.xcassets in Resources */,
 				6F89303F238F073600BBCE75 /* GameSetup.storyboard in Resources */,
 				6F89304B238F07DE00BBCE75 /* MainMenu.storyboard in Resources */,
+				64FD9844239AE7AB004BB807 /* MoveGroup.storyboard in Resources */,
 				B66512BF2386FB28000E20C5 /* Main.storyboard in Resources */,
 				6F893041238F075D00BBCE75 /* InputPlayersNames.storyboard in Resources */,
 				6F893043238F077200BBCE75 /* PassDevice.storyboard in Resources */,
