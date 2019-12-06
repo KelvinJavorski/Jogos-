@@ -9,22 +9,20 @@
 import Foundation
 
 class Map {
-    var map : [[Place]] = [[]]
+    var mapMatrix : [[Place]] = [[]]
 	var mapSize : Int = 7
     
     var playersPosition : [Int] = [3, 3]
     
     var direction : directions!
 	
-    
-	
 	// >>>---------> MAP GENERATION
     
-    init (mapSize: Int) {
-        
+	init  () { }
+	
+    func initialize (mapSize: Int) {
 		self.createEmptyMap(size: mapSize)
 		self.mapSize = mapSize
-		
     }
     
 //    func Positions() {
@@ -67,9 +65,10 @@ class Map {
     }
     
 	func createEmptyMap(size: Int){
+		mapMatrix = [[]]
 		for line in 0...size{
 			for column in 0...size{
-				map[line][column] = Place(name: "", imageName: "", type: .empty)
+				mapMatrix[line][column] = Place(name: "", imageName: "", type: .empty)
 			}
 		}
 	}
