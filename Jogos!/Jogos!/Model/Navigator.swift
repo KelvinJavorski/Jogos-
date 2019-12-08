@@ -19,7 +19,7 @@ class Navigator {
     
     var direction : directions!
     
-    var groupPosition : position!
+    var groupPosition : position = position(x: 3, y: 3)
     
 	init () {}
 	

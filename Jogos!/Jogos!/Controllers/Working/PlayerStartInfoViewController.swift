@@ -26,10 +26,10 @@ class PlayerStartInfoViewController: UIViewController {
 		switch player.alignment {
 		case .innocent:
 			alignmentLabel.text = "A TOURIST"
-			objectiveLabel.attributedText = GameManager.shared.getAttrStrObjective()
+			objectiveLabel.attributedText = GameManager.shared.getAttrStrObjective(objective: GameManager.shared.innocentObjective)
 		case .murderer:
 			alignmentLabel.text = "THE MURDERER"
-			
+			objectiveLabel.attributedText = GameManager.shared.getAttrStrObjective(objective: GameManager.shared.murdererObjective)
 		}
 		
 		// OBSERVED OBJECT INFO

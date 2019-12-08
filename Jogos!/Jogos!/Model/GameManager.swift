@@ -47,7 +47,7 @@ class GameManager {
 	
 	func setupGame (playerNames: [String]) {
         //Generate new map
-        navigator = Navigator(mapSize: 7, groupPosition: position(x: 1, y: 1))
+		navigator.initialize(mapSize: 7, groupPosition: position(x: 3, y: 3))
         
 		// Create Players from names array
         players = setupPlayers(playerNames: playerNames)
@@ -91,13 +91,13 @@ class GameManager {
     
     func listOfPlacesAvailable() -> [Place]{
         var listOfPlaces : [Place] = []
-        for i in (0...navigator!.map.mapSize){
-            for j in (0...navigator!.map.mapSize){
-                if (navigator!.map.map[i][j].type == .empty){
+        for i in (0...navigator.map.mapSize){
+            for j in (0...navigator.map.mapSize){
+                if (navigator.map.mapMatrix[i][j].type == .empty){
                     print("vazio")
                 }
                 else{
-                    listOfPlaces.append(navigator!.map.map[i][j])
+                    listOfPlaces.append(navigator.map.mapMatrix[i][j])
                 }
             }
         }
@@ -129,8 +129,19 @@ class GameManager {
 	
 	
 	func nextTurn (direction: directions) {
-		if dayTurnsLeft > 0 {
-			
+		
+		navigator.moveGroup(to: direction)
+		let newPlace = navigator.groupPlace().type
+		
+		if newPlace == .safehouse {
+			endGame(winner: .inocent)
+			return
+		}
+		dayTurnsLeft -= 1
+		if hasGameEnded() {
+			endGame(winner: .murderer)
+		}
+		
 			// check next position on map
 			
 			// if trap OR safehouse {
@@ -140,21 +151,14 @@ class GameManager {
 			//	  reset timer
 			//    turnsLeft -= 1
 			// }
-		} else {
-			
-			endGame(winner: .murderer)
-			
-		}
+		
 	}
 	
 	func hasGameEnded () -> Bool {
-		
 		if dayTurnsLeft > 0 {
-			
-			gameState = .nightCycle
+			gameState = .ended
 			return true
 		}
-		
 		return false
 	}
     
