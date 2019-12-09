@@ -179,6 +179,7 @@ class GameManager {
 		
 		players.remove(at: 0)
 		players.append(nextPlayer)
+		currentPlayer = nextPlayer
 		
 		return nextPlayer
 	}
@@ -206,7 +207,7 @@ class GameManager {
 	
 	let normalTextAtributes : [NSAttributedString.Key:Any] =
 		[.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
-		 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: .regular)]
+		 NSAttributedString.Key.font: UIFont.init(name: "SFProText-Thin", size: 20.0)!]//UIFont.systemFont(ofSize: 20.0, weight: .regular)]
 	
 	let boldTextAttributes : [NSAttributedString.Key:Any] =
 		[.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
@@ -224,28 +225,32 @@ class GameManager {
 		return attributedStr
 	}
 	
-	func getAttrStrObjects(firstObj : String, distance: Int, direction: directions, secondObject: String, direction2: directions) -> NSMutableAttributedString {
+	func getAttrStrUpdatedObj(obj: Place) -> NSMutableAttributedString {
+		
+		let distance = navigator.distanceBetween(from: navigator.groupPosition, to: obj.position)
+		let direction = navigator.directionBetween(from: navigator.groupPosition, to: obj.position)
 		
 		let attrStr = NSMutableAttributedString(string: "You see the\n", attributes: normalTextAtributes)
-		
-		attrStr.append(NSAttributedString(string: firstObj, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: obj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: String(format: "%dkm to the ", distance), attributes: normalTextAtributes))
-		
 		attrStr.append(NSAttributedString(string: directionToStr(direction: direction), attributes: boldTextAttributes))
+		attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
 		
-		attrStr.append(NSAttributedString(string: ".\n\nYou remember that ", attributes: normalTextAtributes))
+		return attrStr
+	}
+	
+	func getAttrStrSecondObject (firstObj: Place, secondObj: Place) -> NSMutableAttributedString {
 		
-		attrStr.append(NSAttributedString(string: directionToStr(direction: direction2), attributes: boldTextAttributes))
+		let direction = navigator.directionBetween(from: firstObj.position, to: secondObj.position)
+		let distance  = navigator.distanceBetween(from: firstObj.position, to: secondObj.position)
 		
+		let attrStr  = NSMutableAttributedString(string: "You remember that\n", attributes: normalTextAtributes)
+		attrStr.append(NSAttributedString(string: String(format: "%dkm to the ", distance)))
+		attrStr.append(NSAttributedString(string: directionToStr(direction: direction)))
 		attrStr.append(NSAttributedString(string: " of the ", attributes: normalTextAtributes))
-		
-		attrStr.append(NSAttributedString(string: firstObj, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: firstObj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: " is  the ", attributes: normalTextAtributes))
-		
-		attrStr.append(NSAttributedString(string: secondObject, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: secondObj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
 		
 		return attrStr

@@ -14,6 +14,7 @@ class PlayerStartInfoViewController: UIViewController {
 	@IBOutlet weak var alignmentLabel: UILabel!
 	@IBOutlet weak var objectiveLabel: UILabel!
 	@IBOutlet weak var objectsInfoLabel: UILabel!
+	@IBOutlet weak var staticObjectInfoLabel: UILabel!
 	
 	var player : Player!
 	
@@ -32,16 +33,9 @@ class PlayerStartInfoViewController: UIViewController {
 			objectiveLabel.attributedText = GameManager.shared.getAttrStrObjective(objective: GameManager.shared.murdererObjective)
 		}
 		
-		// OBSERVED OBJECT INFO
+		objectsInfoLabel.attributedText = GameManager.shared.getAttrStrUpdatedObj(obj: player.place)
 		
-//		let firstObj = player.place.name
-//		let distance = GameManager.map.distanceBetween(group, player.place)
-//		let direction = GameManager.map.directionBetween(from: group, to: player.place)
-//		let secondObj = player.secondPlace.name
-//		let direction2 = player.directionToSecondPlace
-		
-//		objectsInfoLabel.attributtedText = GameManager.shared.getAttrStrObjects(firstObj: firstObj, distance: distance, direction: direction, secondObject: secondObj, direction2: direction2)
-		
+		staticObjectInfoLabel.attributedText = GameManager.shared.getAttrStrSecondObject(firstObj: player.place, secondObj: player.secondPlace)
 	}
 	
 	@IBAction func nextPlayer(_ sender: UIButton) {
