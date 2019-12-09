@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerStartInfoViewController: UIViewController {
+class PlayerStartInfoViewController: BaseViewController {
 
 	@IBOutlet weak var playerNameLabel: UILabel!
 	@IBOutlet weak var alignmentLabel: UILabel!

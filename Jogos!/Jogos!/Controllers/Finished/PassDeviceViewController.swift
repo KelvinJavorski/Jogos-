@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PassDeviceViewController: UIViewController {
+class PassDeviceViewController: BaseViewController {
 
 	@IBOutlet weak var label: UILabel!
 	@IBOutlet weak var bottomLabel: UILabel!

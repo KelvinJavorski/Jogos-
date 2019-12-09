@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameEndViewController: UIViewController {
+class GameEndViewController: BaseViewController {
 
 	func refreshInterface () {
 		// RELOAD INFO THAT SHOWS ONSCREEN

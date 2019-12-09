@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentPlaceViewController: UIViewController {
+class CurrentPlaceViewController: BaseViewController {
 
 	func refreshInterface () {
 		// RELOAD INFO THAT SHOWS ONSCREEN
