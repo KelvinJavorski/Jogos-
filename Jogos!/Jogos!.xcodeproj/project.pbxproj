@@ -271,11 +271,9 @@
 				B66512C42386FB2A000E20C5 /* Assets.xcassets in Resources */,
 				6F89303F238F073600BBCE75 /* GameSetup.storyboard in Resources */,
 				6F89304B238F07DE00BBCE75 /* MainMenu.storyboard in Resources */,
-<<<<<<< HEAD
 				64FD9844239AE7AB004BB807 /* MoveGroup.storyboard in Resources */,
 				B66512BF2386FB28000E20C5 /* Main.storyboard in Resources */,
-=======
->>>>>>> develop
+
 				6F893041238F075D00BBCE75 /* InputPlayersNames.storyboard in Resources */,
 				6F893043238F077200BBCE75 /* PassDevice.storyboard in Resources */,
 			);
