@@ -30,7 +30,7 @@ class Player {
 	
 	var place 					: Place = Place()
 	var secondPlace 			: Place = Place()
-	var directionToSecondPlace 	: directions = .north
+	var directionToSecondPlace 	: directions = .on
 	var distanceToSecondPlace  	: Int = 0
 	
 	init (name: String) {
@@ -44,6 +44,24 @@ class Player {
 		self.secondPlace 			= infos[.secondPlace] as! Place
 		self.directionToSecondPlace = infos[.directionToSecondPlace] as! directions
 		self.distanceToSecondPlace  = infos[.distanceBetweenPlaces] as! Int
+	}
+	
+	func getStrAlignment() -> String  {
+		switch alignment {
+		case .innocent:
+			return "A TOURIST"
+		case .murderer:
+			return "THE MURDERER"
+		}
+	}
+	
+	func getStrObjective() -> String {
+		switch alignment {
+		case .innocent:
+			return "find the BOAT"
+		case .murderer:
+			return "wait for NIGHTFALL"
+		}
 	}
 	
 	

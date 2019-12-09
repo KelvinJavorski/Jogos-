@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PassDeviceViewController: UIViewController {
+class PassDeviceViewController: DarkBaseViewController {
 
 	@IBOutlet weak var label: UILabel!
 	@IBOutlet weak var bottomLabel: UILabel!
@@ -39,6 +39,7 @@ class PassDeviceViewController: UIViewController {
 			}
 		case .dayCycle:
 			if let vc = storyboard?.instantiateViewController(identifier: "Current Place") as? CurrentPlaceViewController {
+				vc.player = player
 				self.navigationController?.pushViewController(vc, animated: true)
 			}
 		case .nightCycle:
@@ -79,27 +80,6 @@ class PassDeviceViewController: UIViewController {
 		super.viewWillAppear(animated)
 		
 		refreshInterface()
-	}
-	
-	
-    
-
-	@IBAction func inputPlayerName(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Input Player Name") as? InputPlayersNameViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
-		}
-	}
-	
-	@IBAction func currentPlace(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Current Place") as? CurrentPlaceViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
-		}
-	}
-	
-	@IBAction func gameEnd(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Game End") as? GameEndViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
-		}
 	}
 	
 

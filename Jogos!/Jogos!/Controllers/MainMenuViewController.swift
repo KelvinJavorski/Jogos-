@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+class MainMenuViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,12 @@ class MainMenuViewController: UIViewController {
     }
     
 	@IBAction func startGame(_ sender: UIButton) {
-		if let vc = storyboard?.instantiateViewController(identifier: "Game Setup") as? GameSetupViewController {
+		if let vc = storyboard?.instantiateViewController(identifier: "Input Player Name") as? InputPlayersNameViewController {
 			self.navigationController?.pushViewController(vc, animated: true)
 		}
 	}
 	
 	@IBAction func options(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "Options", bundle: nil)
-//        let vc = storyboard.instantiateInitialViewController() as! OptionsViewController
 		if let vc = storyboard?.instantiateViewController(identifier: "Options") as? OptionsViewController {
 			self.navigationController?.pushViewController(vc, animated: true)
 		}

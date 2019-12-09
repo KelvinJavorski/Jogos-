@@ -26,10 +26,9 @@ class GameManager {
 	static let shared = GameManager()
 	
 	var players         : [Player] = []
+	var navigator		: Navigator = Navigator()
 	var currentPlayer 	: Player!
-    var numberOfPlayers : Int!
-    var navigator       : Navigator!
-	
+    var numberOfPlayers : Int = 0
 	var dayTurnsLeft 	: Int!
 	var playersInfoLeft : Int!
 	
@@ -47,56 +46,86 @@ class GameManager {
 	
 	func setupGame (playerNames: [String]) {
         //Generate new map
-        navigator = Navigator(mapSize: 7, groupPosition: position(x: 1, y: 1))
+		navigator.initialize(mapSize: 7, groupPosition: Position(x: 3, y: 3))
         
 		// Create Players from names array
         players = setupPlayers(playerNames: playerNames)
- 
-		// Reset Turns Left
+		numberOfPlayers = playerNames.count
 		
-		playersInfoLeft = playerNames.count
+		// Reset Turns Left
+		dayTurnsLeft = numberOfPlayers * 3
+		playersInfoLeft = numberOfPlayers
+		
+		// Set game state
 		gameState = .initialInfo
 	}
 	
     func setupPlayers(playerNames: [String]) -> [Player]{
+		
         var listOfPlayers : [Player] = []
+		
         let listOfAlignments = randomizeAlignment(numberOfPlayers: playerNames.count)
-        let listOfPlaces = listOfPlacesAvailable()
+        let listOfPlaces = searchMiscAndSafePlaces()
+        let eachPlayersPlace = defineEachPlayerPlaces(alignmentOrder: listOfAlignments, listOfPlaces: listOfPlaces)
         
         //Define both places for each player before initialize
         
         for (index, name) in playerNames.enumerated(){
-            let player = Player(name: name, alignment: listOfAlignments[index], place: Place(), secondPlace: Place())
+			let place1 = eachPlayersPlace[index][0]
+            let place2 = eachPlayersPlace[index][1]
+            
+			let player = Player(infos: [
+				.name: name,
+				.alignment: listOfAlignments[index],
+				.firstPlace: place1,
+				.secondPlace: place2,
+                .distanceBetweenPlaces: navigator.distanceBetween(from: navigator.groupPosition, to: Position(x: place1.position.x, y: place1.position.y)),
+                .directionToSecondPlace: navigator.directionBetween(from: Position(x: place1.position.x, y: place1.position.y), to: Position(x: place2.position.x, y: place2.position.y))
+				])
+			
             listOfPlayers.append(player)
         }
         return listOfPlayers
     }
     
-    func listOfPlacesAvailable() -> [Place]{
-        var listOfPlaces : [Place] = []
-        for i in (0...navigator!.map.mapSize){
-            for j in (0...navigator!.map.mapSize){
-                if (navigator!.map.map[i][j].type == .empty){
-                    print("vazio")
+    func searchMiscAndSafePlaces() -> [[Place]]{
+        var listOfObjects = [[Place]]()
+        let matrix = navigator.map
+        for i in (0...(matrix.mapSize - 1)) {
+            for j in (0...(matrix.mapSize - 1)) {
+                if (matrix.mapMatrix[i][j]!.type == .misc) {
+                    listOfObjects[0].append(matrix.mapMatrix[i][j]!)
                 }
-                else{
-                    listOfPlaces.append(navigator!.map.map[i][j])
+                else if (matrix.mapMatrix[i][j]!.type == .safehouse) {
+                    listOfObjects[1].append(matrix.mapMatrix[i][j]!)
                 }
             }
         }
-        return listOfPlaces
+        return listOfObjects
     }
     
-    func defineEachPlayerPlaces(players : [Player]){
-        for player in players{
-            //Define players reference places.
-            if (player.alignment == .murderer){
-                player.place = Place(name: "", imageName: "", type: .safehouse)
+    func defineEachPlayerPlaces(alignmentOrder : [Player.alignments], listOfPlaces : [[Place]]) -> [[Place]]{
+        var randomList = listOfPlaces[0].shuffled()
+        var playersPlaceList = [[Place]]()
+        
+        for (index, alignment) in alignmentOrder.enumerated(){
+            //Define first place for murderer
+            if (alignment == .murderer){
+                playersPlaceList[index].append(listOfPlaces[1][0])
             }
+            //Define first place for non murderers
             else{
-                player.place = Place(name: "", imageName: "", type: .empty)
+                let nextPlace = randomList[0]
+                randomList.remove(at: 0)
+                playersPlaceList[index].append(nextPlace)
             }
+            //Define second place for players
+            let nextPlace = randomList[0]
+            randomList.remove(at: 0)
+            playersPlaceList[index].append(nextPlace)
         }
+        
+        return playersPlaceList
     }
     
 	func hasShownPlayerInfo () {
@@ -112,8 +141,19 @@ class GameManager {
 	
 	
 	func nextTurn (direction: directions) {
-		if dayTurnsLeft > 0 {
-			
+		
+		navigator.moveGroup(to: direction)
+		let newPlace = navigator.groupPlace().type
+		
+		if newPlace == .safehouse {
+			endGame(winner: .inocent)
+			return
+		}
+		dayTurnsLeft -= 1
+		if hasGameEnded() {
+			endGame(winner: .murderer)
+		}
+		
 			// check next position on map
 			
 			// if trap OR safehouse {
@@ -123,21 +163,14 @@ class GameManager {
 			//	  reset timer
 			//    turnsLeft -= 1
 			// }
-		} else {
-			
-			endGame(winner: .murderer)
-			
-		}
+		
 	}
 	
 	func hasGameEnded () -> Bool {
-		
 		if dayTurnsLeft > 0 {
-			
-			gameState = .nightCycle
+			gameState = .ended
 			return true
 		}
-		
 		return false
 	}
     
@@ -158,16 +191,14 @@ class GameManager {
 		
 		players.remove(at: 0)
 		players.append(nextPlayer)
+		currentPlayer = nextPlayer
 		
 		return nextPlayer
 	}
 	
 	// >>>---------> GAME ENDING
 	
-	
-	
-    private init(){
-    }
+	private init(){}
     
 	enum winners {
 		case murderer
@@ -184,47 +215,54 @@ class GameManager {
 	
 	let innocentObjective = "You were visiting the Island with a group of tourists when you got lost.\nFind the BOAT that took you here before nightfall to save yourself."
 	
+	let murdererObjective = ""
+	
 	let normalTextAtributes : [NSAttributedString.Key:Any] =
 		[.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
-		 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: .regular)]
+		 NSAttributedString.Key.font: UIFont.init(name: "SFProText-Thin", size: 20.0)!]//UIFont.systemFont(ofSize: 20.0, weight: .regular)]
 	
 	let boldTextAttributes : [NSAttributedString.Key:Any] =
 		[.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
 		 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20.0, weight: .semibold)]
 	
 	
-	func getAttrStrInnocentObjective () -> NSMutableAttributedString {
+	func getAttrStrObjective (objective: String) -> NSMutableAttributedString {
 		
-		let attributedStr = NSMutableAttributedString(string: innocentObjective, attributes: normalTextAtributes)
+		let attributedStr = NSMutableAttributedString(string: objective, attributes: normalTextAtributes)
 		
-		let location = innocentObjective.distance(from: innocentObjective.startIndex, to: innocentObjective.firstIndex(of: "B")!)
-		attributedStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20.0, weight: .semibold), range: NSRange(location: location, length: 4))
+		let range : NSRange = NSString(string: objective).range(of: "BOAT")
+			
+		attributedStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 20.0, weight: .semibold), range: range)
 		
 		return attributedStr
 	}
 	
-	func getAttrStrObjects(firstObj : String, distance: Int, direction: directions, secondObject: String, direction2: directions) -> NSMutableAttributedString {
+	func getAttrStrUpdatedObj(obj: Place) -> NSMutableAttributedString {
+		
+		let distance = navigator.distanceBetween(from: navigator.groupPosition, to: obj.position)
+		let direction = navigator.directionBetween(from: navigator.groupPosition, to: obj.position)
 		
 		let attrStr = NSMutableAttributedString(string: "You see the\n", attributes: normalTextAtributes)
-		
-		attrStr.append(NSAttributedString(string: firstObj, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: obj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: String(format: "%dkm to the ", distance), attributes: normalTextAtributes))
-		
 		attrStr.append(NSAttributedString(string: directionToStr(direction: direction), attributes: boldTextAttributes))
+		attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
 		
-		attrStr.append(NSAttributedString(string: ".\n\nYou remember that ", attributes: normalTextAtributes))
+		return attrStr
+	}
+	
+	func getAttrStrSecondObject (firstObj: Place, secondObj: Place) -> NSMutableAttributedString {
 		
-		attrStr.append(NSAttributedString(string: directionToStr(direction: direction2), attributes: boldTextAttributes))
+		let direction = navigator.directionBetween(from: firstObj.position, to: secondObj.position)
+		let distance  = navigator.distanceBetween(from: firstObj.position, to: secondObj.position)
 		
+		let attrStr  = NSMutableAttributedString(string: "You remember that\n", attributes: normalTextAtributes)
+		attrStr.append(NSAttributedString(string: String(format: "%dkm to the ", distance)))
+		attrStr.append(NSAttributedString(string: directionToStr(direction: direction)))
 		attrStr.append(NSAttributedString(string: " of the ", attributes: normalTextAtributes))
-		
-		attrStr.append(NSAttributedString(string: firstObj, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: firstObj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: " is  the ", attributes: normalTextAtributes))
-		
-		attrStr.append(NSAttributedString(string: secondObject, attributes: boldTextAttributes))
-		
+		attrStr.append(NSAttributedString(string: secondObj.name, attributes: boldTextAttributes))
 		attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
 		
 		return attrStr

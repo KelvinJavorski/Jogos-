@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class OptionsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

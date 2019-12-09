@@ -12,11 +12,8 @@ class Place {
 	
 	var name 	  : String = ""
 	var imageName : String = ""
-    struct coordenate {
-        var x : Int!
-        var y : Int!
-    }
-    var coordenate : coordenate!
+
+    var position : Position = Position(x: 0, y: 0)
 	
 	enum types {
 		case spawn
@@ -30,7 +27,7 @@ class Place {
     
     init(){}
 	
-	init(name: String, imageName: String, type: types) {
+	init(name: String = "", imageName: String = "", type: types) {
 		self.name  = name
 		self.imageName = imageName
 		self.type = type

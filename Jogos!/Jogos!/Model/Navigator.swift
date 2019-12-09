@@ -8,61 +8,64 @@
 
 import Foundation
 
-struct position {
+struct Position {
     var x : Int!
     var y : Int!
 }
 
 class Navigator {
-    
-    init (mapSize: Int, groupPosition: position) {
-        self.map = Map(mapSize: mapSize)
-        self.groupPosition = groupPosition
-    }
-    var map : Map!
+	
+    var map : Map = Map()
     
     var direction : directions!
     
-    var groupPosition : position!
+    var groupPosition : Position = Position(x: 3, y: 3)
     
-    func directionBetween(from : Place, to : Place) -> directions {
-        if (from.coordenate.x == to.coordenate.x) {
-            if (from.coordenate.y < to.coordenate.y) {
-                return.south
+	init () {}
+	
+	func initialize (mapSize: Int, groupPosition: Position) {
+		map.initialize(mapSize: mapSize)
+		self.groupPosition = groupPosition
+	}
+	
+    func directionBetween(from: Position, to: Position) -> directions {
+        if (from.x == to.x) {
+            if (from.y < to.y) {
+                return .south
             }
             else {
-                return.north
+                return .north
             }
         }
-        if (from.coordenate.y == to.coordenate.y) {
-            if (from.coordenate.x < to.coordenate.x) {
-                return.west
+        if (from.y == to.y) {
+            if (from.x < to.x) {
+                return .west
             }
             else {
-                return.east
+                return .east
             }
         }
-        if (from.coordenate.x < to.coordenate.x) {
-            if (from.coordenate.y < to.coordenate.y) {
-                direction.self = directions.northwest
+        if (from.x < to.x) {
+            if (from.y < to.y) {
+                return .northwest
             }
-            else if (from.coordenate.y > to.coordenate.y) {
-                return.southwest
-            }
-        }
-        else if (from.coordenate.x > to.coordenate.x) {
-            if (from.coordenate.y < to.coordenate.y) {
-                return.southeast
-            }
-            else if (from.coordenate.y > to.coordenate.y) {
-                return.northeast
+            else if (from.y > to.y) {
+                return .southwest
             }
         }
-        return.on
+        else if (from.x > to.x) {
+            if (from.y < to.y) {
+                return .southeast
+            }
+            else if (from.y > to.y) {
+                return .northeast
+            }
+        }
+        return .on
     }
     
-    func distanceBetween(from : Place, to : Place) -> Int{
-        let distance = abs(from.coordenate.x - to.coordenate.x) + (from.coordenate.y - to.coordenate.y)
+    func distanceBetween(from: Position, to: Position) -> Int {
+        let distance = abs(from.x - to.x) + abs(from.y - to.y)
         
         return distance
     }
@@ -70,40 +73,32 @@ class Navigator {
     func moveGroup(to: directions) {
         switch to {
         case .north:
-            self.groupPosition.y = self.groupPosition.y - 1
-        break
+            self.groupPosition.y -= 1
         case .south:
-            self.groupPosition.y = self.groupPosition.y + 1
-        break
+            self.groupPosition.y += 1
         case .east:
-            self.groupPosition.x = self.groupPosition.x + 1
-        break
+            self.groupPosition.x += 1
         case .west:
-            self.groupPosition.x = self.groupPosition.x - 1
-        break
+            self.groupPosition.x -= 1
         case .northeast:
-            self.groupPosition.x = self.groupPosition.x + 1
-            self.groupPosition.y = self.groupPosition.y - 1
-        break
+            self.groupPosition.x += 1
+            self.groupPosition.y -= 1
         case .northwest:
-            self.groupPosition.x = self.groupPosition.x - 1
-            self.groupPosition.y = self.groupPosition.y - 1
-        break
+            self.groupPosition.x -= 1
+            self.groupPosition.y -= 1
         case .southeast:
-            self.groupPosition.x = self.groupPosition.x + 1
-            self.groupPosition.y = self.groupPosition.y + 1
-        break
+            self.groupPosition.x += 1
+            self.groupPosition.y += 1
         case .southwest:
-            self.groupPosition.x = self.groupPosition.x - 1
-            self.groupPosition.y = self.groupPosition.y + 1
-        break
+            self.groupPosition.x -= 1
+            self.groupPosition.y += 1
         default:
             break
         }
     }
     
-    func groupPlace(playerPosition: position) -> Place{
-        return map.map[playerPosition.x][playerPosition.y]
+    func groupPlace() -> Place {
+        return map.mapMatrix[groupPosition.x][groupPosition.y]!
     }
     
 }

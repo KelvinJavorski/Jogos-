@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameSetupViewController: UIViewController {
+class GameSetupViewController: BaseViewController {
 
 	let availablePlayersOption = [3,4,5]
     var numberOfPlayers = 0
