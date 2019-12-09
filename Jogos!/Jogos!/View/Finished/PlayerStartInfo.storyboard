@@ -60,7 +60,7 @@
                                         <rect key="frame" x="10" y="146" width="290.5" height="355.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4n2-FX-YFI">
-                                                <rect key="frame" x="0.0" y="0.0" width="290.5" height="172.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="290.5" height="112"/>
                                                 <string key="text">You were visiting the Island with a group of tourists when you got lost.
 Find the BOAT that took you here before nightfall to save yourself.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -68,13 +68,15 @@ Find the BOAT that took you here before nightfall to save yourself.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeS-5j-Kkh">
-                                                <rect key="frame" x="0.0" y="182.5" width="290.5" height="173"/>
+                                                <rect key="frame" x="0.0" y="122" width="290.5" height="111.5"/>
                                                 <string key="text">You can see the 
-LIGHTHOUSE 3km to the WEST.
-
-You remember that 
-SOUTH of the LIGHTHOUSE 
-is a GREAT STATUE.</string>
+LIGHTHOUSE 3km to the WEST.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Static Objects" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-7K-woC">
+                                                <rect key="frame" x="0.0" y="243.5" width="290.5" height="112"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -154,6 +156,7 @@ pass to next player</string>
                         <outlet property="objectiveLabel" destination="4n2-FX-YFI" id="AOt-jh-5mV"/>
                         <outlet property="objectsInfoLabel" destination="ZeS-5j-Kkh" id="NV9-8P-t2S"/>
                         <outlet property="playerNameLabel" destination="xkg-xV-u4l" id="Wo7-1M-YpN"/>
+                        <outlet property="staticObjectInfoLabel" destination="MFI-7K-woC" id="6C6-ov-OUM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPH-0L-z05" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

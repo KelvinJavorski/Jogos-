@@ -46,6 +46,24 @@ class Player {
 		self.distanceToSecondPlace  = infos[.distanceBetweenPlaces] as! Int
 	}
 	
+	func getStrAlignment() -> String  {
+		switch alignment {
+		case .innocent:
+			return "A TOURIST"
+		case .murderer:
+			return "THE MURDERER"
+		}
+	}
+	
+	func getStrObjective() -> String {
+		switch alignment {
+		case .innocent:
+			return "find the BOAT"
+		case .murderer:
+			return "wait for NIGHTFALL"
+		}
+	}
+	
 	
 	
 }

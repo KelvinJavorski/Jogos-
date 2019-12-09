@@ -39,6 +39,7 @@ class PassDeviceViewController: UIViewController {
 			}
 		case .dayCycle:
 			if let vc = storyboard?.instantiateViewController(identifier: "Current Place") as? CurrentPlaceViewController {
+				vc.player = player
 				self.navigationController?.pushViewController(vc, animated: true)
 			}
 		case .nightCycle:
