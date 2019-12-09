@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoveGroupViewController: UIViewController {
+class MoveGroupViewController: BaseViewController {
     
     @IBOutlet weak var windRoseImage: UIImageView!
     
