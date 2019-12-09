@@ -29,7 +29,6 @@ class GameManager {
 	var navigator		: Navigator = Navigator()
 	var currentPlayer 	: Player!
     var numberOfPlayers : Int = 0
-	
 	var dayTurnsLeft 	: Int!
 	var playersInfoLeft : Int!
 	
@@ -47,14 +46,11 @@ class GameManager {
 	
 	func setupGame (playerNames: [String]) {
         //Generate new map
-		navigator.initialize(mapSize: 7, groupPosition: position(x: 3, y: 3))
+		navigator.initialize(mapSize: 7, groupPosition: Position(x: 3, y: 3))
         
 		// Create Players from names array
         players = setupPlayers(playerNames: playerNames)
 		numberOfPlayers = playerNames.count
-		
-		// Generate new map
-		navigator.initialize(mapSize: 7, groupPosition: position(x: 3, y: 3))
 		
 		// Reset Turns Left
 		dayTurnsLeft = numberOfPlayers * 3
@@ -69,19 +65,22 @@ class GameManager {
         var listOfPlayers : [Player] = []
 		
         let listOfAlignments = randomizeAlignment(numberOfPlayers: playerNames.count)
-        let listOfPlaces = listOfPlacesAvailable()
+        let listOfPlaces = searchMiscAndSafePlaces()
+        let eachPlayersPlace = defineEachPlayerPlaces(alignmentOrder: listOfAlignments, listOfPlaces: listOfPlaces)
         
         //Define both places for each player before initialize
         
         for (index, name) in playerNames.enumerated(){
-			
+			let place1 = eachPlayersPlace[index][0]
+            let place2 = eachPlayersPlace[index][1]
+            
 			let player = Player(infos: [
 				.name: name,
-				.alignment: listOfAlignments[index]//,
-				//.firstPlace: Place,
-				//.secondPlace: Place,
-				//.distanceBetweenPlaces: Int
-				//.directionToSecondPlace: directions
+				.alignment: listOfAlignments[index],
+				.firstPlace: place1,
+				.secondPlace: place2,
+                .distanceBetweenPlaces: navigator.distanceBetween(from: navigator.groupPosition, to: Position(x: place1.coordenate.x, y: place1.coordenate.y)),
+                .directionToSecondPlace: navigator.directionBetween(from: Position(x: place1.coordenate.x, y: place1.coordenate.y), to: Position(x: place2.coordenate.x, y: place2.coordenate.y))
 				])
 			
             listOfPlayers.append(player)
@@ -89,31 +88,44 @@ class GameManager {
         return listOfPlayers
     }
     
-    func listOfPlacesAvailable() -> [Place]{
-        var listOfPlaces : [Place] = []
-        for i in (0...navigator.map.mapSize){
-            for j in (0...navigator.map.mapSize){
-                if (navigator.map.mapMatrix[i][j].type == .empty){
-                    print("vazio")
+    func searchMiscAndSafePlaces() -> [[Place]]{
+        var listOfObjects = [[Place]]()
+        let matrix = navigator.map
+        for i in (0...(matrix.mapSize - 1)) {
+            for j in (0...(matrix.mapSize - 1)) {
+                if (matrix.mapMatrix[i][j]!.type == .misc) {
+                    listOfObjects[0].append(matrix.mapMatrix[i][j]!)
                 }
-                else{
-                    listOfPlaces.append(navigator.map.mapMatrix[i][j])
+                else if (matrix.mapMatrix[i][j]!.type == .safehouse) {
+                    listOfObjects[1].append(matrix.mapMatrix[i][j]!)
                 }
             }
         }
-        return listOfPlaces
+        return listOfObjects
     }
     
-    func defineEachPlayerPlaces(players : [Player]){
-        for player in players{
-            //Define players reference places.
-            if (player.alignment == .murderer){
-                player.place = Place(name: "", imageName: "", type: .safehouse)
+    func defineEachPlayerPlaces(alignmentOrder : [Player.alignments], listOfPlaces : [[Place]]) -> [[Place]]{
+        var randomList = listOfPlaces[0].shuffled()
+        var playersPlaceList = [[Place]]()
+        
+        for (index, alignment) in alignmentOrder.enumerated(){
+            //Define first place for murderer
+            if (alignment == .murderer){
+                playersPlaceList[index].append(listOfPlaces[1][0])
             }
+            //Define first place for non murderers
             else{
-                player.place = Place(name: "", imageName: "", type: .empty)
+                let nextPlace = randomList[0]
+                randomList.remove(at: 0)
+                playersPlaceList[index].append(nextPlace)
             }
+            //Define second place for players
+            let nextPlace = randomList[0]
+            randomList.remove(at: 0)
+            playersPlaceList[index].append(nextPlace)
         }
+        
+        return playersPlaceList
     }
     
 	func hasShownPlayerInfo () {
