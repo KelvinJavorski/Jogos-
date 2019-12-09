@@ -13,7 +13,7 @@ class Place {
 	var name 	  : String = ""
 	var imageName : String = ""
 
-    var position : position
+    var position : Position = Position(x: 0, y: 0)
 	
 	enum types {
 		case spawn

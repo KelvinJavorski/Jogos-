@@ -54,8 +54,8 @@ class Map {
                         let place = objectsAndEmpty[objectsAndEmpty.count - 1]
                         self.mapMatrix[i][j] = place
                         if(place.type == .misc){
-                            self.mapMatrix[i][j]!.coordenate.x = i
-                            self.mapMatrix[i][j]!.coordenate.y = j
+                            self.mapMatrix[i][j]!.position.x = i
+                            self.mapMatrix[i][j]!.position.y = j
                         }
                         objectsAndEmpty = objectsAndEmpty.dropLast()
                         

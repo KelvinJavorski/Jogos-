@@ -99,7 +99,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0ot-VW-HSA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nU9-kL-HlS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainMenu" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="nU9-kL-HlS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

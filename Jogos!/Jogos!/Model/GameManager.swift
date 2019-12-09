@@ -79,8 +79,8 @@ class GameManager {
 				.alignment: listOfAlignments[index],
 				.firstPlace: place1,
 				.secondPlace: place2,
-                .distanceBetweenPlaces: navigator.distanceBetween(from: navigator.groupPosition, to: Position(x: place1.coordenate.x, y: place1.coordenate.y)),
-                .directionToSecondPlace: navigator.directionBetween(from: Position(x: place1.coordenate.x, y: place1.coordenate.y), to: Position(x: place2.coordenate.x, y: place2.coordenate.y))
+                .distanceBetweenPlaces: navigator.distanceBetween(from: navigator.groupPosition, to: Position(x: place1.position.x, y: place1.position.y)),
+                .directionToSecondPlace: navigator.directionBetween(from: Position(x: place1.position.x, y: place1.position.y), to: Position(x: place2.position.x, y: place2.position.y))
 				])
 			
             listOfPlayers.append(player)
