@@ -9,6 +9,7 @@
 import Foundation
 
 class Map {
+//    var mapMatrix = [[Place?]]
     var mapMatrix : [[Place?]] = [[]]
 	var mapSize : Int = 7
 
@@ -29,16 +30,18 @@ class Map {
         
         populateNil()
         
-        let spawnPosition = mapSize/2 + 1
+        let spawnPosition = mapSize/2
         self.mapMatrix[spawnPosition][spawnPosition] = Place(name: "Spawn", imageName: "Spawn", type: Place.types.spawn)
         
         randomizeSafe()
         
         let objects : [Place] = [Place(name: "objeto0", imageName: "objeto0", type: .misc),Place(name: "objeto1", imageName: "objeto1", type: .misc),Place(name: "objeto2", imageName: "objeto2", type: .misc),Place(name: "objeto3", imageName: "objeto3", type: .misc),Place(name: "objeto4", imageName: "objeto4", type: .misc),Place(name: "objeto5", imageName: "objeto5", type: .misc),Place(name: "objeto6", imageName: "objeto6", type: .misc),Place(name: "objeto7", imageName: "objeto7", type: .misc)]
         
+        let amountOfEmptyObjects = (mapSize * mapSize) - objects.count
+        
         var empty : [Place] = []
-        for i in (0...40) {
-            empty[i] = Place(name: "Empty", imageName: "Empty", type: .empty)
+        for _ in (0...amountOfEmptyObjects - 1) {
+            empty.append(Place(name: "Empty", imageName: "Empty", type: .empty))
         }
         
         var objectsAndEmpty = objects + empty
@@ -47,8 +50,13 @@ class Map {
         while (objectsAndEmpty.count > 0) {
             for i in (0...(self.mapSize - 1)) {
                 for j in (0...(self.mapSize - 1)) {
-                    if (mapMatrix[i][j] != nil) {
-                        mapMatrix[i][j] = objectsAndEmpty[objectsAndEmpty.count]
+                    if (self.mapMatrix[i][j] == nil) {
+                        let place = objectsAndEmpty[objectsAndEmpty.count - 1]
+                        self.mapMatrix[i][j] = place
+                        if(place.type == .misc){
+                            self.mapMatrix[i][j]!.coordenate.x = i
+                            self.mapMatrix[i][j]!.coordenate.y = j
+                        }
                         objectsAndEmpty = objectsAndEmpty.dropLast()
                         
                     }
@@ -60,11 +68,11 @@ class Map {
     
     func populateNil() {
         for i in (0...(self.mapSize - 1)) {
-            for j in (0...(self.mapSize - 1)) {
-                if (mapMatrix[i][j] != nil) {
-                    mapMatrix[i][j] = nil
-                    
-                }
+            mapMatrix.append([Place]())
+            for _ in (0...(self.mapSize - 1)) {
+                mapMatrix[i].append(nil)
+//                mapMatrix[i].insert(nil, at: j)
+
             }
         }
     }
@@ -72,7 +80,7 @@ class Map {
     func randomizeSafe() {
         let randomBorder = Int.random(in: 0...3)
         
-        var position : position!
+        var position = Position()
         
         switch randomBorder {
         case 0: position.x = Int.random(in: 0...(self.mapSize - 1))
@@ -82,9 +90,9 @@ class Map {
         position.y = Int.random(in: 0...(self.mapSize - 1))
             break
         case 2: position.x = Int.random(in: 0...(self.mapSize - 1))
-        position.y = self.mapSize
+        position.y = self.mapSize - 1
             break
-        case 3: position.x = self.mapSize
+        case 3: position.x = self.mapSize - 1
         position.y = Int.random(in: 0...(self.mapSize - 1))
             break
         default: self.mapMatrix[0][0] = Place(name: "Safe", imageName: "Safe", type: .safehouse)

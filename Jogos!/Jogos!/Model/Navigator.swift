@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct position {
+struct Position {
     var x : Int!
     var y : Int!
 }
@@ -19,16 +19,16 @@ class Navigator {
     
     var direction : directions!
     
-    var groupPosition : position = position(x: 3, y: 3)
+    var groupPosition : Position = Position(x: 3, y: 3)
     
 	init () {}
 	
-	func initialize (mapSize: Int, groupPosition: position) {
+	func initialize (mapSize: Int, groupPosition: Position) {
 		map.initialize(mapSize: mapSize)
 		self.groupPosition = groupPosition
 	}
 	
-    func directionBetween(from: position, to: position) -> directions {
+    func directionBetween(from: Position, to: Position) -> directions {
         if (from.x == to.x) {
             if (from.y < to.y) {
                 return .south
@@ -64,7 +64,7 @@ class Navigator {
         return .on
     }
     
-    func distanceBetween(from: position, to: position) -> Int {
+    func distanceBetween(from: Position, to: Position) -> Int {
         let distance = abs(from.x - to.x) + abs(from.y - to.y)
         
         return distance
@@ -98,7 +98,7 @@ class Navigator {
     }
     
     func groupPlace() -> Place {
-        return map.mapMatrix[groupPosition.x][groupPosition.y]
+        return map.mapMatrix[groupPosition.x][groupPosition.y]!
     }
     
 }
