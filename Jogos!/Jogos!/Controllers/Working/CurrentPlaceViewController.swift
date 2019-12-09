@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentPlaceViewController: UIViewController {
+class CurrentPlaceViewController: BaseViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	

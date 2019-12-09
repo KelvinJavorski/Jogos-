@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InputPlayersNameViewController: UIViewController {
+class InputPlayersNameViewController: BaseViewController {
     
 	// TEXTFIELDS OUTLETS
     @IBOutlet weak var player1TextField: UITextField!
