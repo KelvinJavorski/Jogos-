@@ -98,7 +98,7 @@ class Navigator {
     }
     
     func groupPlace() -> Place {
-        return map.mapMatrix[groupPosition.x][groupPosition.y]
+        return map.mapMatrix[groupPosition.x][groupPosition.y]!
     }
     
 }

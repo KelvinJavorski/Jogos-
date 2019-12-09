@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  DarkBaseViewController.swift
 //  Jogos!
 //
 //  Created by Rubens Paulico on 09/12/19.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
-
+class DarkBaseViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +24,7 @@ class BaseViewController: UIViewController {
         
         let backgroundImageView = UIImageView()
         
-        
-        let backgroundImage = UIImage(named: "bg")
+        let backgroundImage = UIImage(named: "bg2")
         
         backgroundImageView.image = backgroundImage
         
@@ -33,7 +32,7 @@ class BaseViewController: UIViewController {
         
         self.view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
-
+        
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         let leadingConstraint = backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0)
         let trailingConstraint = backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0)
@@ -42,6 +41,7 @@ class BaseViewController: UIViewController {
               NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         
     }
+    
 
     /*
     // MARK: - Navigation

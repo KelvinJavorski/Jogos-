@@ -91,7 +91,7 @@ class GameManager {
     
     func listOfPlacesAvailable() -> [Place]{
         var listOfPlaces : [Place] = []
-        for i in (0...navigator.map.mapSize){
+       /* for i in (0...navigator.map.mapSize){
             for j in (0...navigator.map.mapSize){
                 if (navigator.map.mapMatrix[i][j].type == .empty){
                     print("vazio")
@@ -101,7 +101,7 @@ class GameManager {
                 }
             }
         }
-        return listOfPlaces
+       */ return listOfPlaces
     }
     
     func defineEachPlayerPlaces(players : [Player]){
