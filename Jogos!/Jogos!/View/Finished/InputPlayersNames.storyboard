@@ -43,17 +43,17 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjf-4f-ETJ" userLabel="Player 1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjy-SH-kFv" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8R-Q1-b0j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -79,9 +79,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="yjy-SH-kFv" firstAttribute="height" secondItem="hjf-4f-ETJ" secondAttribute="height" multiplier="0.75" id="saY-jK-ITs"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,16 +101,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-tT-iqy" userLabel="Player 2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-gt-dRz" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baw-uW-ZbS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -139,9 +136,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="o3I-gt-dRz" firstAttribute="height" secondItem="Nag-tT-iqy" secondAttribute="height" multiplier="0.75" id="i0d-ab-087"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,16 +158,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-LK-n9D" userLabel="Player 3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enz-K8-o7o" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-Rf-dqj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -199,9 +193,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Enz-K8-o7o" firstAttribute="height" secondItem="AF2-LK-n9D" secondAttribute="height" multiplier="0.75" id="uvL-D2-IoK"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -224,16 +215,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-7E-5Ig" userLabel="Player 4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-ql-6GA" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNT-R1-BU3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -259,9 +250,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="EyN-ql-6GA" firstAttribute="height" secondItem="dL3-7E-5Ig" secondAttribute="height" multiplier="0.75" id="ZZ4-aD-pAd"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -284,16 +272,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMU-N0-LGu" userLabel="Player 5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ii-Dw-vUK" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7s-Vl-jEG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -319,9 +307,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="1Ii-Dw-vUK" firstAttribute="height" secondItem="EMU-N0-LGu" secondAttribute="height" multiplier="0.75" id="5Lj-Pn-qab"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -344,16 +329,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-NX-Pl6" userLabel="Player 6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70R-IJ-UgA" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ4-O7-W4k">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -379,9 +364,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="70R-IJ-UgA" firstAttribute="height" secondItem="qpA-NX-Pl6" secondAttribute="height" multiplier="0.75" id="CdZ-2n-3zm"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -404,16 +386,16 @@
                                                 <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-3q-Iy4" userLabel="Player 7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-4u-r0R" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKa-El-1ec">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -439,9 +421,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="jVv-4u-r0R" firstAttribute="height" secondItem="jdX-3q-Iy4" secondAttribute="height" multiplier="0.75" id="m8X-cS-JA8"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -604,12 +583,19 @@
                         <outlet property="player7View" destination="5oT-j5-M3e" id="Pei-7t-612"/>
                         <outlet property="player8TextField" destination="3ok-rQ-j0c" id="zK8-V9-Wyh"/>
                         <outlet property="player8View" destination="EtG-TR-3CV" id="yzm-h3-z3q"/>
+                        <outlet property="removePlayer1Button" destination="O8R-Q1-b0j" id="lmd-4k-qzM"/>
                         <outlet property="removePlayer1View" destination="yjy-SH-kFv" id="aVD-gD-GWL"/>
+                        <outlet property="removePlayer2Button" destination="baw-uW-ZbS" id="3eT-u1-EyC"/>
                         <outlet property="removePlayer2View" destination="o3I-gt-dRz" id="O6K-QD-525"/>
+                        <outlet property="removePlayer3Button" destination="UNT-R1-BU3" id="DDA-Fm-nD4"/>
                         <outlet property="removePlayer3View" destination="Enz-K8-o7o" id="I1p-9z-kpV"/>
+                        <outlet property="removePlayer4Button" destination="UNT-R1-BU3" id="OEI-3S-JTf"/>
                         <outlet property="removePlayer4View" destination="EyN-ql-6GA" id="z5S-dx-hCD"/>
+                        <outlet property="removePlayer5Button" destination="y7s-Vl-jEG" id="viV-T6-QKh"/>
                         <outlet property="removePlayer5View" destination="1Ii-Dw-vUK" id="8MZ-SB-BaA"/>
+                        <outlet property="removePlayer6Button" destination="sJ4-O7-W4k" id="rpn-bd-ura"/>
                         <outlet property="removePlayer6View" destination="70R-IJ-UgA" id="jev-uQ-8Ea"/>
+                        <outlet property="removePlayer7Button" destination="eKa-El-1ec" id="rqU-op-xvy"/>
                         <outlet property="removePlayer7View" destination="jVv-4u-r0R" id="B9t-jp-f3x"/>
                         <outlet property="removePlayer8View" destination="CFA-NW-BLg" id="9ka-RJ-laT"/>
                     </connections>
