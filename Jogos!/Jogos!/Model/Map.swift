@@ -71,7 +71,6 @@ class Map {
             mapMatrix.append([Place]())
             for _ in (0...(self.mapSize - 1)) {
                 mapMatrix[i].append(nil)
-//                mapMatrix[i].insert(nil, at: j)
 
             }
         }

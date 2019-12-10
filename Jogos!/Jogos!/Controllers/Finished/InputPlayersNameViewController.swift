@@ -40,28 +40,34 @@ class InputPlayersNameViewController: BaseViewController {
 	@IBOutlet weak var removePlayer7View: RoundedCornerView!
 	@IBOutlet weak var removePlayer8View: RoundedCornerView!
 	
-	struct playerInput {
+    @IBOutlet weak var removePlayer1Button: UIButton!
+    @IBOutlet weak var removePlayer2Button: UIButton!
+    @IBOutlet weak var removePlayer3Button: UIButton!
+    @IBOutlet weak var removePlayer4Button: UIButton!
+    @IBOutlet weak var removePlayer5Button: UIButton!
+    @IBOutlet weak var removePlayer6Button: UIButton!
+    @IBOutlet weak var removePlayer7Button: UIButton!
+    @IBOutlet weak var removePlayer8Button: UIButton!
+    
+    
+    
+    struct playerInput {
 		var view : RoundedCornerView!
 		var removeView : RoundedCornerView!
 		var textField : UITextField!
+        var removeButton : UIButton!
 	}
 	
 	var playerInputs : [playerInput]!
     
 	func refreshInterface () { // RELOAD INFO ON THE SCREEN
-		for playerInput in playerInputs   {
-			playerInput.textField.text = ""
-			playerInput.textField.placeholder = "Type the name of the player"
-			playerInput.view.isHidden = true
-			playerInput.removeView.isHidden = true
-		}
-		
-		playerInputs[0].view.isHidden = false
+        for i in 0 ... 3{
+            playerInputs[i].removeView.isHidden = true
+        }
 	}
 	
-	func updateNameCells () {
+    func updateNameCells () {
 		var names = getNames()
-		
 		for i in 0 ... playerInputs.count - 1 {
 			let playerInput = playerInputs[i]
 			
@@ -69,17 +75,11 @@ class InputPlayersNameViewController: BaseViewController {
 				let name = names[0]
 				playerInput.textField.text 		= name
 				playerInput.view.isHidden 		= false
-				playerInput.removeView.isHidden = false
 				names.remove(at: 0)
-			} else {
-				playerInput.textField.text 		= ""
-				playerInput.removeView.isHidden = true
-				if playerInputs[i - 1].textField.text != ""{
-					playerInput.view.isHidden 	= false
-				} else {
-					playerInput.view.isHidden 	= true
-				}
-			}
+            }
+            else{
+                playerInput.textField.text      = ""
+            }
 		}
 	}
 	
@@ -95,7 +95,7 @@ class InputPlayersNameViewController: BaseViewController {
 	
 	@IBAction func removePlayer(_ sender: UIButton) {
 		playerInputs[sender.tag].textField.text = ""
-		updateNameCells()
+        updateNameCells()
 	}
 	
 	@IBAction func startGame(_ sender: UIButton) {
@@ -112,14 +112,14 @@ class InputPlayersNameViewController: BaseViewController {
         super.viewDidLoad()
 		
 		playerInputs = [
-			playerInput(view: player1View, removeView: removePlayer1View, textField: player1TextField),
-			playerInput(view: player2View, removeView: removePlayer2View, textField: player2TextField),
-			playerInput(view: player3View, removeView: removePlayer3View, textField: player3TextField),
-			playerInput(view: player4View, removeView: removePlayer4View, textField: player4TextField),
-			playerInput(view: player5View, removeView: removePlayer5View, textField: player5TextField),
-			playerInput(view: player6View, removeView: removePlayer6View, textField: player6TextField),
-			playerInput(view: player7View, removeView: removePlayer7View, textField: player7TextField),
-			playerInput(view: player8View, removeView: removePlayer8View, textField: player8TextField)]
+			playerInput(view: player1View, removeView: removePlayer1View, textField: player1TextField, removeButton: removePlayer1Button),
+			playerInput(view: player2View, removeView: removePlayer2View, textField: player2TextField, removeButton: removePlayer2Button),
+			playerInput(view: player3View, removeView: removePlayer3View, textField: player3TextField, removeButton: removePlayer3Button),
+			playerInput(view: player4View, removeView: removePlayer4View, textField: player4TextField, removeButton: removePlayer4Button),
+			playerInput(view: player5View, removeView: removePlayer5View, textField: player5TextField, removeButton: removePlayer5Button),
+			playerInput(view: player6View, removeView: removePlayer6View, textField: player6TextField, removeButton: removePlayer6Button),
+			playerInput(view: player7View, removeView: removePlayer7View, textField: player7TextField, removeButton: removePlayer7Button),
+			playerInput(view: player8View, removeView: removePlayer8View, textField: player8TextField, removeButton: removePlayer8Button)]
 		
         refreshInterface()
     }
