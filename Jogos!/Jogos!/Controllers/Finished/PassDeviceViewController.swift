@@ -31,12 +31,16 @@ class PassDeviceViewController: DarkBaseViewController {
 		}
 	}
 	
-	@IBAction func nextScreen(_ sender: UIButton) {
-		switch GameManager.shared.gameState {
-		case .initialInfo:
-			if let vc = storyboard?.instantiateViewController(identifier: "Player Start Info") {
-				self.navigationController?.pushViewController(vc, animated: true)
-			}
+    
+    @IBAction func nextScreen(_ sender: UIButton) {
+        switch GameManager.shared.gameState {
+        case .initialInfo:
+            guard let vc = self.storyboard?.instantiateViewController(identifier: "PlayerStartInfo") as? PlayerStartInfoViewController else{
+                fatalError("Unable to create Player Start Info View Controller")
+            }
+            self.present(vc, animated: false, completion: nil)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            
 		case .dayCycle:
 			if let vc = storyboard?.instantiateViewController(identifier: "Current Place") as? CurrentPlaceViewController {
 				vc.player = player
@@ -73,7 +77,7 @@ class PassDeviceViewController: DarkBaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		refreshInterface()
+//		refreshInterface()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
