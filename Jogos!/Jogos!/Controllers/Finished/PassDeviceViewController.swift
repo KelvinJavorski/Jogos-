@@ -12,6 +12,8 @@ class PassDeviceViewController: DarkBaseViewController {
 
 	@IBOutlet weak var label: UILabel!
 	@IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var holdButton: UIButton!
+    
 	var player : Player!
 	
 	func refreshInterface () {
@@ -33,18 +35,22 @@ class PassDeviceViewController: DarkBaseViewController {
 	
     
     @IBAction func nextScreen(_ sender: UIButton) {
+    
         switch GameManager.shared.gameState {
         case .initialInfo:
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "PlayerStartInfo") as? PlayerStartInfoViewController else{
+            guard let vc = self.storyboard?.instantiateViewController(identifier: "PlayerStartInfo")
+//                as? PlayerStartInfoViewController
+                else{
                 fatalError("Unable to create Player Start Info View Controller")
             }
-            self.present(vc, animated: false, completion: nil)
 //            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: false, completion: nil)
             
 		case .dayCycle:
 			if let vc = storyboard?.instantiateViewController(identifier: "Current Place") as? CurrentPlaceViewController {
 				vc.player = player
-				self.navigationController?.pushViewController(vc, animated: true)
+//				self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
 			}
 		case .nightCycle:
 			print("GO TO VOTING SCREEN")
@@ -79,12 +85,11 @@ class PassDeviceViewController: DarkBaseViewController {
 		
 //		refreshInterface()
 	}
-	
+    
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
 		refreshInterface()
 	}
-	
 
 }
