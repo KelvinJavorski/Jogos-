@@ -35,7 +35,7 @@ class Map {
         
         randomizeSafe()
         
-        let objects : [Place] = [Place(name: "objeto0", imageName: "objeto0", type: .misc),Place(name: "objeto1", imageName: "objeto1", type: .misc),Place(name: "objeto2", imageName: "objeto2", type: .misc),Place(name: "objeto3", imageName: "objeto3", type: .misc),Place(name: "objeto4", imageName: "objeto4", type: .misc),Place(name: "objeto5", imageName: "objeto5", type: .misc),Place(name: "objeto6", imageName: "objeto6", type: .misc),Place(name: "objeto7", imageName: "objeto7", type: .misc)]
+        let objects : [Place] = [Place(name: "LIGHTHOUSE", imageName: "LIGHTHOUSE", type: .misc),Place(name: "RUINS", imageName: "RUINS", type: .misc),Place(name: "HILL", imageName: "HILL", type: .misc),Place(name: "STATUE", imageName: "STATUE", type: .misc),Place(name: "CAVE", imageName: "CAVE", type: .misc),Place(name: "WATERFALL", imageName: "WATERFALL", type: .misc),Place(name: "SKELETON", imageName: "SKELETON", type: .misc),Place(name: "CORAL REEF", imageName: "CORAL REEF", type: .misc)]
         
         let amountOfEmptyObjects = (mapSize * mapSize) - objects.count
         
@@ -94,11 +94,11 @@ class Map {
         case 3: position.x = self.mapSize - 1
         position.y = Int.random(in: 0...(self.mapSize - 1))
             break
-        default: self.mapMatrix[0][0] = Place(name: "Safe", imageName: "Safe", type: .safehouse)
+        default: self.mapMatrix[0][0] = Place(name: "PORT", imageName: "PORT", type: .safehouse)
             break
         }
         
-        self.mapMatrix[position.x][position.y] = Place(name: "Safe", imageName: "Safe", type: .safehouse)
+        self.mapMatrix[position.x][position.y] = Place(name: "PORT", imageName: "PORT", type: .safehouse)
         
     }
     
