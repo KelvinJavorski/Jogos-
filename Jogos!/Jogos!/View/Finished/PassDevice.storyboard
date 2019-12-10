@@ -64,7 +64,7 @@ Player Name</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-TV-ulA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
                                         <connections>
-                                            <action selector="nextScreen:" destination="mTP-1K-mNP" eventType="touchUpInside" id="fHy-9S-4hn"/>
+                                            <action selector="nextScreen:" destination="mTP-1K-mNP" eventType="touchUpInside" id="Qin-2n-dx9"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-sl-utN">
@@ -107,6 +107,7 @@ Player Name</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6ag-xe-fgB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U06-US-uns"/>
                     <connections>
                         <outlet property="bottomLabel" destination="3Sm-sl-utN" id="19M-1P-cca"/>
                         <outlet property="label" destination="4RP-TM-pcR" id="lZq-lX-eFP"/>
@@ -114,23 +115,25 @@ Player Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0W9-Gh-YT3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.04347826086958" y="137.94642857142856"/>
-        </scene>
-        <!--Input Player Name-->
-        <scene sceneID="a1v-sS-owl">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Input Player Name" storyboardName="InputPlayersNames" referencedIdentifier="Input Player Name" id="1MS-IB-mZ6" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GQI-nD-1u3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="114" y="478"/>
+            <point key="canvasLocation" x="1933.3333333333335" y="137.94642857142856"/>
         </scene>
         <!--Current Place-->
         <scene sceneID="h1z-38-dXV">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Current Place" storyboardName="CurrentPlace" referencedIdentifier="Current Place" id="W7Z-VR-v5v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Current Place" storyboardName="CurrentPlace" referencedIdentifier="Current Place" id="W7Z-VR-v5v" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Wbu-EI-r4c"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiW-KI-Oqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="114" y="514"/>
+        </scene>
+        <!--PlayerStartInfo-->
+        <scene sceneID="XEA-dJ-uqF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="PlayerStartInfo" storyboardName="PlayerStartInfo" referencedIdentifier="PlayerStartInfo" id="RKo-PR-Qr6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00U-cz-9C1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="565"/>
         </scene>
     </scenes>
 </document>

@@ -40,14 +40,14 @@ class Map {
         let amountOfEmptyObjects = (mapSize * mapSize) - objects.count
         
         var empty : [Place] = []
-        for _ in (0...amountOfEmptyObjects - 1) {
+        for _ in (0...amountOfEmptyObjects - 2) {
             empty.append(Place(name: "Empty", imageName: "Empty", type: .empty))
         }
         
         var objectsAndEmpty = objects + empty
         objectsAndEmpty = objectsAndEmpty.shuffled()
         
-        while (objectsAndEmpty.count > 0) {
+//        while (objectsAndEmpty.count > 0) {
             for i in (0...(self.mapSize - 1)) {
                 for j in (0...(self.mapSize - 1)) {
                     if (self.mapMatrix[i][j] == nil) {
@@ -62,7 +62,7 @@ class Map {
                     }
                 }
             }
-        }
+//        }
         
     }
     

@@ -98,15 +98,22 @@ class InputPlayersNameViewController: BaseViewController {
         updateNameCells()
 	}
 	
-	@IBAction func startGame(_ sender: UIButton) {
-		let names = getNames()
-		
-		GameManager.shared.setupGame(playerNames: names)
-		
-		if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
-			self.navigationController?.pushViewController(vc, animated: true)
-		}
-	}
+//	@IBAction func startGame(_ sender: UIButton) {
+//
+////
+////		if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
+////			self.navigationController?.pushViewController(vc, animated: true)
+////		}
+//	}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Pass Device Segue"{
+            let names = getNames()
+            
+            GameManager.shared.setupGame(playerNames: names)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

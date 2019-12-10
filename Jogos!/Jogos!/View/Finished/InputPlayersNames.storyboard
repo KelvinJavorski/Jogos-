@@ -513,7 +513,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="startGame:" destination="EIY-x6-uu1" eventType="touchUpInside" id="RTw-to-l1q"/>
+                                                    <segue destination="Gv2-LU-uUH" kind="presentation" identifier="Pass Device Segue" id="jmm-Aw-UD7"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -566,6 +566,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dej-Ta-Z3Q"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d1A-4R-uCO"/>
                     <connections>
                         <outlet property="player1TextField" destination="hjf-4f-ETJ" id="GQP-uz-sce"/>
                         <outlet property="player1View" destination="Gp6-9c-ebQ" id="uFb-Kl-pKq"/>
@@ -602,15 +603,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uey-Cn-kh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+            <point key="canvasLocation" x="928.98550724637687" y="77.678571428571431"/>
         </scene>
         <!--Pass Device-->
         <scene sceneID="ryU-vt-WD1">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Pass Device" storyboardName="PassDevice" referencedIdentifier="Pass Device" id="Gv2-LU-uUH" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Pass Device" storyboardName="PassDevice" referencedIdentifier="Pass Device" id="Gv2-LU-uUH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wMP-p3-xJw"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzL-o2-bRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="419"/>
+            <point key="canvasLocation" x="602" y="474"/>
         </scene>
     </scenes>
     <resources>

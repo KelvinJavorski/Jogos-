@@ -41,8 +41,8 @@ class PlayerStartInfoViewController: BaseViewController {
 	@IBAction func nextPlayer(_ sender: UIButton) {
 		GameManager.shared.hasShownPlayerInfo()
 		
-		// Go to pass device screen
-		/*
+//		 Go to pass device screen
+//		/*
 		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
 			self.navigationController?.popToViewController(vc, animated: true)
 		} else {
@@ -50,13 +50,12 @@ class PlayerStartInfoViewController: BaseViewController {
 				self.navigationController?.pushViewController(vc, animated: true)
 			}
 		}
-*/
 	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        refreshInterface()
+//        refreshInterface()
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
