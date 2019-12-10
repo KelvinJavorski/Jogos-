@@ -225,7 +225,7 @@ class GameManager {
     
     let normalTextAtributes : [NSAttributedString.Key:Any] =
         [.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
-         NSAttributedString.Key.font: UIFont.init(name: "SFProText-Thin", size: 20.0)]//UIFont.systemFont(ofSize: 20.0, weight: .regular)]
+         NSAttributedString.Key.font: UIFont.init(name: ".SFProText-Thin", size: 20.0) as Any]//UIFont.systemFont(ofSize: 20.0, weight: .regular)]
     
     let boldTextAttributes : [NSAttributedString.Key:Any] =
         [.backgroundColor: UIColor.init(white: 1.0, alpha: 0.0),
@@ -270,6 +270,8 @@ class GameManager {
         attrStr.append(NSAttributedString(string: " is  the ", attributes: normalTextAtributes))
         attrStr.append(NSAttributedString(string: secondObj.name, attributes: boldTextAttributes))
         attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
+        
+        print(attrStr)
         
         return attrStr
     }
