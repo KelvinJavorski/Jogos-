@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RKk-1G-6ok">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EIY-x6-uu1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BnD-cG-rXM" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="100.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="106.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type the name of 4 - 6 players" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp4-Ie-hLZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="106.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -34,26 +34,26 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5KD-Y8-KDX">
-                                <rect key="frame" x="52" y="198.5" width="310.5" height="460"/>
+                                <rect key="frame" x="52" y="160.5" width="310.5" height="487"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gp6-9c-ebQ" userLabel="Player 1" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kle-w3-Z0M">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjf-4f-ETJ" userLabel="Player 1">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="backgroundColor" red="0.20036309960000001" green="0.38879162070000001" blue="0.38973709940000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjy-SH-kFv" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8R-Q1-b0j">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -95,22 +95,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guF-9e-xJ7" userLabel="Player 2" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="58" width="310.5" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RpP-yR-WPR">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53.5"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-tT-iqy" userLabel="Player 2">
-                                                        <rect key="frame" x="0.0" y="18.5" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-gt-dRz" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baw-uW-ZbS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -152,22 +152,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBI-Z3-9B4" userLabel="Player 3" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116.5" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="123" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-8I-1Fj">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-LK-n9D" userLabel="Player 3">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enz-K8-o7o" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtP-Rf-dqj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -209,22 +209,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6U-k9-Jv2" userLabel="Player 4" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174.5" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="184.5" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0C0-0l-SPX">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-7E-5Ig" userLabel="Player 4">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-ql-6GA" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNT-R1-BU3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -266,22 +266,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-Js-ev4" userLabel="Player 5" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="232.5" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="246" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NlO-nc-5ae">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMU-N0-LGu" userLabel="Player 5">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ii-Dw-vUK" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7s-Vl-jEG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -323,22 +323,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-yd-Bgx" userLabel="Player 6" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="290.5" width="310.5" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="307.5" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T2E-Rg-hO6">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53.5"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-NX-Pl6" userLabel="Player 6">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70R-IJ-UgA" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53.5"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ4-O7-W4k">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -380,22 +380,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oT-j5-M3e" userLabel="Player 7" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="349" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="369" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i6Z-ZH-XPU">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-3q-Iy4" userLabel="Player 7">
-                                                        <rect key="frame" x="0.0" y="18" width="242" height="17"/>
+                                                        <rect key="frame" x="0.0" y="19.5" width="238.5" height="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-4u-r0R" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="247" y="0.0" width="53.5" height="53"/>
+                                                        <rect key="frame" x="243.5" y="0.0" width="57" height="56.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKa-El-1ec">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="53"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="56.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -437,22 +437,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtG-TR-3CV" userLabel="Player 8" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="407" width="310.5" height="53"/>
+                                        <rect key="frame" x="0.0" y="430.5" width="310.5" height="56.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mF7-Qp-CmT">
-                                                <rect key="frame" x="5" y="0.0" width="300.5" height="53"/>
+                                                <rect key="frame" x="5" y="0.0" width="300.5" height="56.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type the name of the player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-rQ-j0c" userLabel="Player 8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="255.5" height="53"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="253" height="56.5"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-NW-BLg" userLabel="Remove Player" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
-                                                        <rect key="frame" x="260.5" y="6.5" width="40" height="40"/>
+                                                        <rect key="frame" x="258" y="7" width="42.5" height="42.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS5-Ze-XGR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="42.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="minusbutton">
@@ -500,7 +500,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3YX-eR-WHW" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="668.5" width="414" height="193.5"/>
+                                <rect key="frame" x="0.0" y="657.5" width="414" height="204.5"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aon-01-a7N" customClass="RoundedCornerView" customModule="Jogos_" customModuleProvider="target">
                                         <rect key="frame" x="83" y="10" width="248" height="74.5"/>
@@ -614,24 +614,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzL-o2-bRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="602" y="474"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hFS-nK-tFD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RKk-1G-6ok" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pHM-7M-CK7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EIY-x6-uu1" kind="relationship" relationship="rootViewController" id="J5c-1j-ozs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3YT-Hv-mXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
