@@ -14,20 +14,20 @@ struct Position {
 }
 
 class Navigator {
-	
+    
     var map : Map = Map()
     
     var direction : directions!
     
     var groupPosition : Position = Position(x: 3, y: 3)
     
-	init () {}
-	
-	func initialize (mapSize: Int, groupPosition: Position) {
-		map.initialize(mapSize: mapSize)
-		self.groupPosition = groupPosition
-	}
-	
+    init () {}
+    
+    func initialize (mapSize: Int, groupPosition: Position) {
+        map.initialize(mapSize: mapSize)
+        self.groupPosition = groupPosition
+    }
+    
     func directionBetween(from: Position, to: Position) -> directions {
         if (from.x == to.x) {
             if (from.y < to.y) {
@@ -101,4 +101,63 @@ class Navigator {
         return map.mapMatrix[groupPosition.x][groupPosition.y]!
     }
     
+    func verifyNeighbor() -> [directions]{
+        var availableDirections : [directions] = [.northwest, .north, .northeast, .west, .east,  .southwest, .south, .southeast]
+        
+        if (groupPosition.x <= 0){
+            if(groupPosition.y <= 0){
+                availableDirections.remove(at: 5)
+                availableDirections.remove(at: 3)
+                availableDirections.remove(at: 2)
+                availableDirections.remove(at: 1)
+                availableDirections.remove(at: 0)
+            }
+            else if(groupPosition.y >= map.mapSize - 1){
+                availableDirections.remove(at: 7)
+                availableDirections.remove(at: 6)
+                availableDirections.remove(at: 5)
+                availableDirections.remove(at: 3)
+                availableDirections.remove(at: 0)
+            }
+            else{
+                availableDirections.remove(at: 5)
+                availableDirections.remove(at: 3)
+                availableDirections.remove(at: 0)
+            }
+        }
+        else if (groupPosition.x >= map.mapSize - 1){
+            if(groupPosition.y <= 0){
+                availableDirections.remove(at: 7)
+                availableDirections.remove(at: 4)
+                availableDirections.remove(at: 2)
+                availableDirections.remove(at: 1)
+                availableDirections.remove(at: 0)
+            }
+            else if(groupPosition.y >= map.mapSize - 1){
+                availableDirections.remove(at: 7)
+                availableDirections.remove(at: 6)
+                availableDirections.remove(at: 5)
+                availableDirections.remove(at: 4)
+                availableDirections.remove(at: 2)
+            }
+            else{
+                availableDirections.remove(at: 7)
+                availableDirections.remove(at: 4)
+                availableDirections.remove(at: 2)
+            }
+        }
+        else{
+            if(groupPosition.y <= 0){
+                availableDirections.remove(at: 2)
+                availableDirections.remove(at: 1)
+                availableDirections.remove(at: 0)
+            }
+            else if(groupPosition.y >= map.mapSize - 1){
+                availableDirections.remove(at: 7)
+                availableDirections.remove(at: 6)
+                availableDirections.remove(at: 5)
+            }
+        }
+        return availableDirections
+    }
 }
