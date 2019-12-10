@@ -137,7 +137,7 @@ class GameManager {
     func hasShownPlayerInfo () {
         playersInfoLeft -= 1
         
-        if playersInfoLeft >= 0 {
+        if playersInfoLeft <= 0 {
             gameState = .dayCycle
         }
     }
@@ -173,7 +173,7 @@ class GameManager {
     }
     
     func hasGameEnded () -> Bool {
-        if dayTurnsLeft > 0 {
+        if dayTurnsLeft <= 0 {
             gameState = .ended
             return true
         }

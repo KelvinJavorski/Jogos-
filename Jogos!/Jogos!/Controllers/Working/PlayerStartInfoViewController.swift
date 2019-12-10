@@ -19,7 +19,7 @@ class PlayerStartInfoViewController: BaseViewController {
 	var player : Player!
 	
 	func refreshInterface () {
-		player = GameManager.shared.getNextPlayer()
+        player = GameManager.shared.currentPlayer
 		
 		playerNameLabel.text = player.name
 		
@@ -43,11 +43,14 @@ class PlayerStartInfoViewController: BaseViewController {
 		
 //		 Go to pass device screen
 //		/*
+//        self.dismiss(animated: true, completion: nil)
 		if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
+            
 			self.navigationController?.popToViewController(vc, animated: true)
-		} else {
+		}else {
 			if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
-				self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
+//				self.navigationController?.pushViewController(vc, animated: true)
 			}
 		}
 	}

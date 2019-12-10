@@ -25,46 +25,58 @@ class MoveGroupViewController: BaseViewController {
     
     var positionFlag : Int = 0
     
-    
+    func updateTurn(){
+        GameManager.shared.dayTurnsLeft -= 1
+        GameManager.shared.hasGameEnded()
+        
+    }
     @IBAction func Naction(_ sender: Any) {
         positionFlag = 1
         alphaAllDirectionButtons()
         Nbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func NEaction(_ sender: Any) {
         positionFlag = 2
         alphaAllDirectionButtons()
         NEbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func Eaction(_ sender: Any) {
         positionFlag = 3
         alphaAllDirectionButtons()
         Ebutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func SEaction(_ sender: Any) {
         positionFlag = 4
         alphaAllDirectionButtons()
         SEbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func Saction(_ sender: Any) {
         positionFlag = 5
         alphaAllDirectionButtons()
         Sbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func SWaction(_ sender: Any) {
         positionFlag = 6
         alphaAllDirectionButtons()
         SWbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func Waction(_ sender: Any) {
         positionFlag = 7
         alphaAllDirectionButtons()
         Wbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     @IBAction func NWaction(_ sender: Any) {
         positionFlag = 8
         alphaAllDirectionButtons()
         NWbutton.alpha = 1.0
+        chooseDirectionButton.isEnabled = true
     }
     
     @IBAction func chooseDirectionAction(_ sender: Any) {
@@ -87,6 +99,18 @@ class MoveGroupViewController: BaseViewController {
             break
         default: GameManager.shared.navigator.moveGroup(to: .on)
         }
+        
+        updateTurn()
+        
+        
+        if let vc = navigationController?.viewControllers.last(where: { $0.isKind(of: PassDeviceViewController.self) }) {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                } else {
+                    if let vc = storyboard?.instantiateViewController(identifier: "Pass Device") as? PassDeviceViewController {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+        
     }
     //gamemaneger.shared.currentplayer
     
@@ -101,16 +125,58 @@ class MoveGroupViewController: BaseViewController {
         Wbutton.alpha = 0.5
     }
     
+    func enableButtons(){
+        NEbutton.isUserInteractionEnabled = false
+        NWbutton.isUserInteractionEnabled = false
+        SEbutton.isUserInteractionEnabled = false
+        SWbutton.isUserInteractionEnabled = false
+        Nbutton.isUserInteractionEnabled = false
+        Wbutton.isUserInteractionEnabled = false
+        Sbutton.isUserInteractionEnabled = false
+        Ebutton.isUserInteractionEnabled = false
+        alphaAllDirectionButtons()
+        
+        let available = GameManager.shared.navigator.verifyNeighbor()
+        for direction in available{
+            switch direction {
+            case .northwest:
+                NWbutton.isUserInteractionEnabled = true
+                NWbutton.alpha = 1
+            case .north:
+                Nbutton.isUserInteractionEnabled = true
+                Nbutton.alpha = 1
+            case .northeast:
+            NEbutton.isUserInteractionEnabled = true
+                NEbutton.alpha = 1
+            case .west:
+            Wbutton.isUserInteractionEnabled = true
+                Wbutton.alpha = 1
+            case .east:
+            Ebutton.isUserInteractionEnabled = true
+                Ebutton.alpha = 1
+            case .southwest:
+            SWbutton.isUserInteractionEnabled = true
+                SWbutton.alpha = 1
+            case .south:
+            Sbutton.isUserInteractionEnabled = true
+                Sbutton.alpha = 1
+            case .southeast:
+            SEbutton.isUserInteractionEnabled = true
+                SEbutton.alpha = 1
+            default:
+                break
+            }
+        }
+    }
+    
     override func viewDidLoad() {
+        enableButtons()
         if GameManager.shared.currentPlayer.alignment == .innocent {
-            Nbutton.alpha = 1.0
+            
             NEbutton.alpha = 0.5
             NWbutton.alpha = 0.5
-            Sbutton.alpha = 1.0
             SEbutton.alpha = 0.5
             SWbutton.alpha = 0.5
-            Ebutton.alpha = 1.0
-            Wbutton.alpha = 1.0
             
             NEbutton.isUserInteractionEnabled = false
             NWbutton.isUserInteractionEnabled = false
@@ -120,18 +186,35 @@ class MoveGroupViewController: BaseViewController {
             windRoseImage.image = UIImage(named: "turista")
         }
         else if GameManager.shared.currentPlayer.alignment == .murderer{
-            Nbutton.alpha = 1.0
-            NEbutton.alpha = 1.0
-            NWbutton.alpha = 1.0
-            Sbutton.alpha = 1.0
-            SEbutton.alpha = 1.0
-            SWbutton.alpha = 1.0
-            Ebutton.alpha = 1.0
-            Wbutton.alpha = 1.0
             
             windRoseImage.image = UIImage(named: "assassino")
         }
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        enableButtons()
+        if GameManager.shared.currentPlayer.alignment == .innocent {
+            
+            NEbutton.alpha = 0.5
+            NWbutton.alpha = 0.5
+            SEbutton.alpha = 0.5
+            SWbutton.alpha = 0.5
+            
+            NEbutton.isUserInteractionEnabled = false
+            NWbutton.isUserInteractionEnabled = false
+            SEbutton.isUserInteractionEnabled = false
+            SWbutton.isUserInteractionEnabled = false
+            
+            windRoseImage.image = UIImage(named: "turista")
+        }
+        else if GameManager.shared.currentPlayer.alignment == .murderer{
+            
+            windRoseImage.image = UIImage(named: "assassino")
+        }
+        super.viewWillAppear(true)
 
         // Do any additional setup after loading the view.
     }
