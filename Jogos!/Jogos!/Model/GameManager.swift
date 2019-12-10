@@ -271,8 +271,6 @@ class GameManager {
         attrStr.append(NSAttributedString(string: secondObj.name, attributes: boldTextAttributes))
         attrStr.append(NSAttributedString(string: ".", attributes: normalTextAtributes))
         
-        print(attrStr)
-        
         return attrStr
     }
     

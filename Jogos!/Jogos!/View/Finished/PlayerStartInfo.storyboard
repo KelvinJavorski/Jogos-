@@ -164,5 +164,13 @@ pass to next player</string>
             </objects>
             <point key="canvasLocation" x="172.46376811594203" y="-141.29464285714286"/>
         </scene>
+        <!--Pass Device-->
+        <scene sceneID="rbd-5C-oNZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Pass Device" storyboardName="PassDevice" referencedIdentifier="Pass Device" id="TSX-Gs-YbS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvy-3C-RBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-176" y="238"/>
+        </scene>
     </scenes>
 </document>
